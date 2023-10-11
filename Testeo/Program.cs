@@ -6,6 +6,8 @@ internal class Program
     {
         Arroz arroz = new Arroz("Arroz blanco","Arroz","3 gallos",3,155f);
 
-        Console.WriteLine(arroz.ToString());
+        Gaseosa mirinda = new Gaseosa("Mirinda", "Gaseosa", "Fanta", 4, 150f);
+
+        Console.WriteLine(mirinda.ToString()); 
     }
 }

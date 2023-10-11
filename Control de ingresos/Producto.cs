@@ -1,30 +1,32 @@
 ﻿namespace Control_de_ingresos
 {
-    public class Producto
+    public abstract class Producto
     {
         private float precio;
         private string nombre;
         private string marca;
         private int cantidad;
 
-        public Producto(float precio, string nombre, string marca, int cantidad) : this(marca, nombre)
+        public Producto(float precio, string nombre, string marca, int cantidad) : this(marca,nombre,cantidad)
         {
             this.precio = precio;
-            this.Cantidad = cantidad;
-
         }
 
-        public Producto(string marca, string nombre)
+        public Producto(string marca, string nombre,int cantidad):this(marca)
+        {
+            this.nombre = nombre;
+            this.Cantidad = cantidad;
+        }
+        protected Producto(string marca)
         {
             this.marca = marca;
-            this.nombre = nombre;
-
         }
 
         public Producto()
         {
 
         }
+
 
         public float Precio { get => precio; set => precio = value; }
         public string Nombre { get => nombre; set => nombre = value; }
@@ -55,6 +57,7 @@
             }
 
         }
+        public abstract void CalcularTotal();
 
     }
 }

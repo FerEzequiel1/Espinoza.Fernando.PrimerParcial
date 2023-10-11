@@ -34,18 +34,24 @@ namespace Control_de_ingresos
         public int Unidades { get => unidades; set => unidades = value; }
         public string TieneChancho { get => tieneChancho; set => tieneChancho = value; }
 
-        public override void CalcularTotal()
+
+        protected override string Mostrar()
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append(base.Mostrar());
+            sb.Append($"--- Unidades: {Unidades} --- Contiene chancho: {TieneChancho}");
+
+            return sb.ToString();
         }
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(base.ToString());
-            sb.Append($"--- Unidades: {Unidades} --- Contiene chancho: {TieneChancho}");
-
-            return sb.ToString();
+            return this.Mostrar();
+        }
+        public override void CalcularTotal()
+        {
+            Console.WriteLine("asd");
         }
     }
 }

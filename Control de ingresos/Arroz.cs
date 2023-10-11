@@ -36,18 +36,23 @@ namespace Control_de_ingresos
         public string Origen { get => origen; set => origen = value; }
         public string Porveedor { get => porveedor; set => porveedor = value; }
 
-        public override void CalcularTotal()
+        protected override string Mostrar()
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append(base.Mostrar());
+            sb.Append($"--- Origen: {Origen} --- Proveedor: {Porveedor}");
+
+            return sb.ToString();
         }
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(base.ToString());
-            sb.Append($"--- Origen: {Origen} --- Proveedor: {Porveedor}");
+            return this.Mostrar();
+        }
 
-            return sb.ToString();
+        public override void CalcularTotal() {
+            Console.WriteLine("asd");
         }
     }
 }

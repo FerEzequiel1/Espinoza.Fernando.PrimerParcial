@@ -1,4 +1,6 @@
-﻿namespace Control_de_ingresos
+﻿using System.Text;
+
+namespace Control_de_ingresos
 {
     public abstract class Producto
     {
@@ -43,25 +45,26 @@
         public int Cantidad { get => cantidad; set => cantidad = value; }
         public string Tipo { get => tipo; set => tipo = value; }
 
+        protected virtual string Mostrar()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append($"Nombre: {Nombre} --- Tipo:{Tipo} --- Marca: {Marca} --- Cantidad: {Cantidad} --- Precio: {Precio}");
+
+            return sb.ToString();
+        }
+
+        public override string ToString()
+        {
+            return this.Mostrar();
+        }
+
         public override bool Equals(object? obj)
         {
             return obj is Producto producto;
 
         }
 
-        public override string ToString()
-        {
-            return $"Nombre: {Nombre} --- Tipo:{Tipo} --- Marca: {Marca} --- Cantidad: {Cantidad} --- Precio: {Precio}";
-        }
-
-        public virtual void MiMetodoVirtual()
-        {
-            if (Marca == "arcor")
-            {
-                precio = precio * 1.3f;
-            }
-
-        }
         public abstract void CalcularTotal();
 
     }

@@ -33,18 +33,24 @@ namespace Control_de_ingresos
         public float Mll { get => mll; set => mll = value; }
         public string Sabor { get => sabor; set => sabor = value; }
 
-        public override void CalcularTotal()
+
+        protected override string Mostrar()
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append(base.Mostrar());
+            sb.Append($"--- Mililitros: {Mll} --- Sabor: {Sabor}");
+
+            return sb.ToString();
         }
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(base.ToString());
-            sb.Append($"--- Mililitros: {Mll} --- Sabor: {Sabor}");
-
-            return sb.ToString();
+            return this.Mostrar();
+        }
+        public override void CalcularTotal()
+        {
+            Console.WriteLine("asd");
         }
 
 

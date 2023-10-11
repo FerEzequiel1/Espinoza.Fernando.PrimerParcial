@@ -9,6 +9,6 @@ internal class Program
         Salchicha unPaquete = new Salchicha("Papu", "Salchicha", "La vienissima", 4, 155f);
 
 
-        Console.WriteLine(unPaquete.ToString()); 
+        Console.WriteLine(arroz.ToString()); 
     }
 }

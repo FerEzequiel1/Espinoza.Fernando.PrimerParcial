@@ -76,5 +76,12 @@ namespace Control_de_ingresos
         {
             return !(a == b);
         }
+
+        public static Salchicha operator +(Salchicha a, Salchicha b)
+        {
+
+            return new Salchicha("Combo Salchica", "Mezcla", "Trapal", a.Cantidad + b.Cantidad, (a.Precio + b.Precio) * 0.7f, a.Unidades, "Si");
+
+        }
     }
 }

@@ -13,6 +13,6 @@ internal class Program
         Salchicha unPaquete2 = new Salchicha("Paspu", "Salchicha", "La vienissima", 4, 155f);
 
 
-        Console.WriteLine(mirind.ToString()); 
+        
     }
 }

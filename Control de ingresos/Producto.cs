@@ -81,5 +81,7 @@ namespace Control_de_ingresos
         {
             return !(a == b);
         }
+
+        
     }
 }

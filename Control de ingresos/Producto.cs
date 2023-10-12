@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Drawing;
+using System.Text;
 
 namespace Control_de_ingresos
 {
@@ -61,11 +62,24 @@ namespace Control_de_ingresos
 
         public override bool Equals(object? obj)
         {
-            return obj is Producto producto;
+            if (obj == null || !(obj is Producto))
+            {
+                return false;
+            }
+
+            return this == (Producto)obj;
 
         }
 
-        public abstract void CalcularTotal();
+        internal abstract void AjustarPrecio();
 
+        public static bool operator == (Producto a, Producto b)
+        {
+            return a.Tipo == b.Tipo && a.Nombre == b.Nombre && a.Marca == b.marca;
+        }
+        public static bool operator !=(Producto a, Producto b)
+        {
+            return !(a == b);
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace Control_de_ingresos
         {
             this.origen = origen;
             this.porveedor = proveedor;
+            this.AjustarPrecio();
         }
         public Arroz(string nombre, string tipo, string marca, int cantidad, float precio, string origen) : this(nombre, tipo, marca, cantidad, precio, origen,"Desconocido")
         {
@@ -31,7 +32,6 @@ namespace Control_de_ingresos
             
         }
 
-        
 
         public string Origen { get => origen; set => origen = value; }
         public string Porveedor { get => porveedor; set => porveedor = value; }
@@ -51,8 +51,33 @@ namespace Control_de_ingresos
             return this.Mostrar();
         }
 
-        public override void CalcularTotal() {
-            Console.WriteLine("asd");
+        internal override void AjustarPrecio() {
+            if (Marca == "3 gallos")
+            {
+                Precio = Precio * 1.3f;
+            }
+        }
+
+
+
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || !(obj is Arroz))
+            {
+                return false;
+            }
+
+            return this == (Arroz)obj;
+
+        }
+
+        public static bool operator ==(Arroz a, Arroz b)
+        {
+            return a.Marca == b.Marca && a.Origen == b.Origen && a.Tipo == b.Tipo;
+        }
+        public static bool operator !=(Arroz a, Arroz b)
+        {
+            return !(a == b);
         }
     }
 }

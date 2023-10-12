@@ -16,6 +16,7 @@ namespace Control_de_ingresos
         {
             this.mll = mll;
             this.sabor = sabor;
+            this.AjustarPrecio();
         }
         public Gaseosa(string nombre, string tipo, string marca, int cantidad, float precio, float mll) : this(nombre, tipo, marca, cantidad, precio, mll, "Tónica")
         {
@@ -48,11 +49,32 @@ namespace Control_de_ingresos
         {
             return this.Mostrar();
         }
-        public override void CalcularTotal()
+        internal override void AjustarPrecio()
         {
-            Console.WriteLine("asd");
+            if(sabor == "Tónica")
+            {
+                Precio = Precio * 0.8f;
+            }
         }
 
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || !(obj is Gaseosa))
+            {
+                return false;
+            }
 
+            return this == (Gaseosa)obj;
+
+        }
+
+        public static bool operator ==(Gaseosa a, Gaseosa b)
+        {
+            return a.Sabor == b.Sabor && a.Mll == b.Mll && a.Tipo == b.Tipo;
+        }
+        public static bool operator !=(Gaseosa a, Gaseosa b)
+        {
+            return !(a == b);
+        }
     }
 }

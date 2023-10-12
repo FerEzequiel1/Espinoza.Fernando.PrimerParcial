@@ -16,6 +16,7 @@ namespace Control_de_ingresos
         {
             this.unidades = unidades;
             this.tieneChancho = tieneChancho;
+            this.AjustarPrecio();
         }
         public Salchicha(string nombre, string tipo, string marca, int cantidad, float precio, int unidades) : this(nombre, tipo, marca, cantidad, precio, unidades, "No")
         {
@@ -49,9 +50,31 @@ namespace Control_de_ingresos
         {
             return this.Mostrar();
         }
-        public override void CalcularTotal()
+        internal override void AjustarPrecio()
         {
-            Console.WriteLine("asd");
+            if(TieneChancho == "No")
+            {
+                Precio = Precio * 0.9f;
+            }
+        }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || !(obj is Salchicha))
+            {
+                return false;
+            }
+
+            return this == (Salchicha)obj;
+
+        }
+
+        public static bool operator ==(Salchicha a, Salchicha b)
+        {
+            return a.TieneChancho == b.TieneChancho && a.Unidades == b.Unidades && a.Tipo == b.Tipo;
+        }
+        public static bool operator !=(Salchicha a, Salchicha b)
+        {
+            return !(a == b);
         }
     }
 }

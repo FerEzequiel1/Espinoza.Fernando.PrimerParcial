@@ -86,5 +86,7 @@ namespace Control_de_ingresos
             return new Arroz("Combo Bolsa de Arroz", "Mezcla", "Trapal", a.Cantidad + b.Cantidad, (a.Precio + b.Precio) * 0.7f, "Argentina", "Trapal");
 
         }
+
+       
     }
 }

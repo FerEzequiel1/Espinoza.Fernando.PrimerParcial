@@ -12,17 +12,17 @@ namespace Control_de_ingresos
         private string sabor;
 
 
-        public Gaseosa(string nombre, string tipo, string marca, int cantidad, float precio,float mll, string sabor) : base(nombre, tipo, marca, cantidad, precio)
+        public Gaseosa(string nombre, string tipo, EMarca marca, int cantidad, float precio,float mll, string sabor) : base(nombre, tipo, marca, cantidad, precio)
         {
             this.mll = mll;
             this.sabor = sabor;
             this.AjustarPrecio();
         }
-        public Gaseosa(string nombre, string tipo, string marca, int cantidad, float precio, float mll) : this(nombre, tipo, marca, cantidad, precio, mll, "Tónica")
+        public Gaseosa(string nombre, string tipo, EMarca marca, int cantidad, float precio, float mll) : this(nombre, tipo, marca, cantidad, precio, mll, "Tónica")
         {
 
         }
-        public Gaseosa(string nombre, string tipo, string marca, int cantidad, float precio) : this(nombre, tipo, marca, cantidad, precio, 2.5f)
+        public Gaseosa(string nombre, string tipo, EMarca marca, int cantidad, float precio) : this(nombre, tipo, marca, cantidad, precio, 2.5f)
         {
 
         }
@@ -80,7 +80,8 @@ namespace Control_de_ingresos
         public static Gaseosa operator +(Gaseosa a, Gaseosa b)
         {
 
-            return new Gaseosa("Pack de gaseosas", "Mezcla", "Trapal", a.Cantidad + b.Cantidad, (a.Precio + b.Precio) * 0.7f, 3f, "Fantasia");
+
+            return new Gaseosa("Pack de gaseosas", "Mezcla", (EMarca)Enum.Parse(typeof(EMarca), "Trapal"), a.Cantidad + b.Cantidad, (a.Precio + b.Precio) * 0.7f, 3f, "Fantasia");
 
         }
 

@@ -13,17 +13,17 @@ namespace Control_de_ingresos
         private string tieneChancho;
 
 
-        public Salchicha(string nombre, string tipo, string marca, int cantidad, float precio, int unidades, string tieneChancho) : base(nombre, tipo, marca, cantidad, precio)
+        public Salchicha(string nombre, string tipo, EMarca marca, int cantidad, float precio, int unidades, string tieneChancho) : base(nombre, tipo, marca, cantidad, precio)
         {
             this.unidades = unidades;
             this.tieneChancho = tieneChancho;
             this.AjustarPrecio();
         }
-        public Salchicha(string nombre, string tipo, string marca, int cantidad, float precio, int unidades) : this(nombre, tipo, marca, cantidad, precio, unidades, "No")
+        public Salchicha(string nombre, string tipo, EMarca marca, int cantidad, float precio, int unidades) : this(nombre, tipo, marca, cantidad, precio, unidades, "No")
         {
 
         }
-        public Salchicha(string nombre, string tipo, string marca, int cantidad, float precio) : this(nombre, tipo, marca, cantidad, precio, 6)
+        public Salchicha(string nombre, string tipo, EMarca marca, int cantidad, float precio) : this(nombre, tipo, marca, cantidad, precio, 6)
         {
 
         }
@@ -81,7 +81,7 @@ namespace Control_de_ingresos
         public static Salchicha operator +(Salchicha a, Salchicha b)
         {
 
-            return new Salchicha("Combo Salchica", "Mezcla", "Trapal", a.Cantidad + b.Cantidad, (a.Precio + b.Precio) * 0.7f, a.Unidades, "Si");
+            return new Salchicha("Combo Salchica", "Mezcla", (EMarca)Enum.Parse(typeof(EMarca), "Trapal"), a.Cantidad + b.Cantidad, (a.Precio + b.Precio) * 0.7f, a.Unidades, "Si");
 
         }
 

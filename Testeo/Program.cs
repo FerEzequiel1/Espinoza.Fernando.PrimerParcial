@@ -1,31 +1,43 @@
 ﻿using Control_de_ingresos;
+using System.Drawing;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        Arroz arroz = new Arroz("Arroz blanco","Arroz","3 galloss",3,100f);
-        Arroz arroz2 = new Arroz("Arroz blanco2", "Arroz", "3 gallos", 3, 155f);
-        Arroz arroz3 = new Arroz("Arroz blanco2", "Arroz2", "3 gallos", 3, 155f);
-        Gaseosa mirinda = new Gaseosa("pepsi", "Arroz", "3 gallos", 3, 200f,3f,"Naranja");
-        Gaseosa mirinda1 = new Gaseosa("seven up", "Arrsoz", "3 galloss", 3, 155f);
-        Salchicha unPaquete = new Salchicha("Papu", "Salchicha", "La vienissima", 4, 155f);
-        Salchicha unPaquete2 = new Salchicha("Paspu", "Salchicha", "La vienissima", 4, 200f);
-        Salchicha unPaquete3 = new Salchicha("Paspusssssssssssssss", "Salchicha", "La vienissima", 4, 200f);
-        Salchicha mirind = new Salchicha("Mirinda", "Gaseosa", "Fanta", 4, 150f);
-        Salchicha unPaquete4 = new Salchicha("Paspuuu", "Salchiasdadasdcha", "La vieniadasdasdssima", 4, 200f);
+        Arroz arroz1 = new Arroz("Arroz blanco","Arroz", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 3,500f,"Argentina","Pablo");
+        Arroz arroz2 = new Arroz("Arroz Integral", "Arroz", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 5, 700,"Argentina","Chacra Gonzalez");
+        Arroz comboArroz = arroz1 + arroz2;
+
+        Gaseosa gaseosa1 = new Gaseosa("Seven up", "Gaseosa", (EMarca)Enum.Parse(typeof(EMarca), "SevenUp"), 3, 500f,3f,"Lima");
+        Gaseosa gaseosa2 = new Gaseosa("Pepsi", "Gaseosa", (EMarca)Enum.Parse(typeof(EMarca), "Pepsi"), 3, 500f, 3f, "Cola");
+
+        Salchicha salchicha1 = new Salchicha("Trini", "Salchicha", (EMarca)Enum.Parse(typeof(EMarca), "Vienissima"), 4, 300f,12,"No");
+        Salchicha salchicha2 = new Salchicha("Don Antonio", "Salchicha", (EMarca)Enum.Parse(typeof(EMarca), "Swift"), 4, 150f,6,"si");
+        Salchicha comboSalchicha = salchicha1 + salchicha2;
 
 
-        List <Producto> productos   = new List<Producto>();
 
-        productos.Add(arroz);
+
+        List<Producto> productos   = new List<Producto>();
+
+        productos.Add(arroz1);
         productos.Add(arroz2);
-        productos.Add(arroz3);
-        productos.Add(mirinda);
+        productos.Add(comboArroz);
+        productos.Add(gaseosa1);
+        productos.Add(gaseosa2);
+        productos.Add(salchicha1);
+        productos.Add(salchicha2);
+        productos.Add(comboSalchicha);
 
-        ListaProductos estante = new(productos);
+        ListaProductos listaDeProductos = new(productos);
 
-        estante.MostrarDetalles();
+        listaDeProductos.MostrarDetalles();
+        
+
+
+
+
 
 
 

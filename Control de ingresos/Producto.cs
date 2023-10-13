@@ -8,22 +8,22 @@ namespace Control_de_ingresos
         private string tipo;
         private float precio;
         private string nombre;
-        private string marca;
+        private EMarca marca;
         private int cantidad;
 
-        public Producto(string nombre,string tipo, string marca, int cantidad,float precio) : this(tipo,marca, nombre,cantidad)
+        public Producto(string nombre,string tipo, EMarca marca, int cantidad,float precio) : this(tipo, marca, nombre,cantidad)
         {
             this.precio = precio;
             
         }
 
-        public Producto(string tipo,string marca, string nombre,int cantidad):this(marca)
+        public Producto(string tipo, EMarca marca, string nombre,int cantidad):this(marca)
         {
             this.nombre = nombre;
             this.Cantidad = cantidad;
             this.tipo = tipo;
         }
-        protected Producto(string marca)
+        protected Producto(EMarca marca)
         {
             this.marca = marca;
             this.nombre = "Sin indentificar";    
@@ -42,9 +42,9 @@ namespace Control_de_ingresos
 
         public float Precio { get => precio; set => precio = value; }
         public string Nombre { get => nombre; set => nombre = value; }
-        public string Marca { get => marca; set => marca = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
         public string Tipo { get => tipo; set => tipo = value; }
+        public EMarca Marca { get => marca; set => marca = value; }
 
         protected virtual string Mostrar()
         {
@@ -75,7 +75,7 @@ namespace Control_de_ingresos
 
         public static bool operator == (Producto a, Producto b)
         {
-            return a.Tipo == b.Tipo && a.Nombre == b.Nombre && a.Marca == b.marca;
+            return a.Tipo == b.Tipo && a.Nombre == b.Nombre && a.Marca == b.Marca;
         }
         public static bool operator !=(Producto a, Producto b)
         {

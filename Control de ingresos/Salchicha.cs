@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -83,5 +84,6 @@ namespace Control_de_ingresos
             return new Salchicha("Combo Salchica", "Mezcla", "Trapal", a.Cantidad + b.Cantidad, (a.Precio + b.Precio) * 0.7f, a.Unidades, "Si");
 
         }
+
     }
 }

@@ -82,6 +82,9 @@ namespace Control_de_ingresos
             return !(a == b);
         }
 
-        
+        public  double PrecioTotal()
+        {
+            return Precio * Cantidad;
+        }
     }
 }

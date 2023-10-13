@@ -83,5 +83,7 @@ namespace Control_de_ingresos
             return new Gaseosa("Pack de gaseosas", "Mezcla", "Trapal", a.Cantidad + b.Cantidad, (a.Precio + b.Precio) * 0.7f, 3f, "Fantasia");
 
         }
+
+       
     }
 }

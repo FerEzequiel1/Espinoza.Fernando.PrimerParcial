@@ -42,7 +42,7 @@ namespace Control_de_ingresos
             StringBuilder sb = new StringBuilder();
 
             sb.Append(base.Mostrar());
-            sb.Append($"--- Unidades: {Unidades} --- Contiene chancho: {TieneChancho}");
+            sb.Append($"--- Unidades: {Unidades} --- Contiene chancho: {TieneChancho} --- TOTAL: {this.PrecioTotal()}");
 
             return sb.ToString();
         }

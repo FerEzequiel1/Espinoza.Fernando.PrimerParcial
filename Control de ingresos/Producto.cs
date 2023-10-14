@@ -86,5 +86,7 @@ namespace Control_de_ingresos
         {
             return Precio * Cantidad;
         }
+
+        
     }
 }

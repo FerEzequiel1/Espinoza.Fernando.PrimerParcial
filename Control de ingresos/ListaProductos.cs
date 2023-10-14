@@ -44,6 +44,7 @@ namespace Control_de_ingresos
             }
             return false;
         }
+        
 
         public static bool operator ==(ListaProductos l, Producto p)
         {
@@ -60,5 +61,32 @@ namespace Control_de_ingresos
         {
             return (!(e == p));
         }
+
+        public void OrdenPorPrecioCantidad(string orden,string tipo)
+        {
+            List<Producto> listaOrdenada;
+
+
+            if (orden == "Ascendente" && tipo == "Precio total")
+            {
+                listaOrdenada = listaDeProductos.OrderBy(producto => producto.PrecioTotal()).ToList();
+            }
+            else if (orden != "Ascendente" && tipo == "Precio total")
+            {
+                listaOrdenada = listaDeProductos.OrderByDescending(producto => producto.PrecioTotal()).ToList();
+            }
+            else if (orden == "Ascendente" && tipo == "Cantidad")
+            {
+                listaOrdenada = listaDeProductos.OrderBy(producto => producto.Cantidad).ToList();
+            }
+            else
+            {
+                listaOrdenada = listaDeProductos.OrderByDescending(producto => producto.Cantidad).ToList();
+            }
+
+            listaDeProductos = listaOrdenada;
+
+        }
+
     }
 }

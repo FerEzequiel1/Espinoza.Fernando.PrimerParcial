@@ -42,7 +42,7 @@ namespace Control_de_ingresos
             StringBuilder sb = new StringBuilder();
 
             sb.Append(base.Mostrar());
-            sb.Append($"--- Origen: {Origen} --- Proveedor: {Porveedor}");
+            sb.Append($"--- Origen: {Origen} --- Proveedor: {Porveedor} --- TOTAL: {this.PrecioTotal()}");
 
             return sb.ToString();
         }

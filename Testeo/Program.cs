@@ -6,7 +6,7 @@ internal class Program
     private static void Main(string[] args)
     {
         Arroz arroz1 = new Arroz("Arroz blanco","Arroz", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 3,500f,"Argentina","Pablo");
-        Arroz arroz2 = new Arroz("Arroz Integral", "Arroz", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 5, 700,"Argentina","Chacra Gonzalez");
+        Arroz arroz2 = new Arroz("Arroz Integral", "Arroz", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 5, 600f,"Argentina","Chacra Gonzalez");
         Arroz comboArroz = arroz1 + arroz2;
 
         Gaseosa gaseosa1 = new Gaseosa("Seven up", "Gaseosa", (EMarca)Enum.Parse(typeof(EMarca), "SevenUp"), 3, 500f,3f,"Lima");
@@ -32,8 +32,11 @@ internal class Program
 
         ListaProductos listaDeProductos = new(productos);
 
-        listaDeProductos.MostrarDetalles();
         
+        
+        
+
+
 
 
 

@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Control de ingresos", "Control de ingresos\Control de ingresos.csproj", "{A4E9DDCF-BC1B-46F0-92A0-8493FD3EDB5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testeo", "Testeo\Testeo.csproj", "{F40BB953-F8C4-408B-9231-5EF3E1AA9CD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testeo", "Testeo\Testeo.csproj", "{F40BB953-F8C4-408B-9231-5EF3E1AA9CD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Login\Login.csproj", "{99DFE799-3F05-4EE7-B624-C24F4D333BF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F40BB953-F8C4-408B-9231-5EF3E1AA9CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F40BB953-F8C4-408B-9231-5EF3E1AA9CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F40BB953-F8C4-408B-9231-5EF3E1AA9CD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99DFE799-3F05-4EE7-B624-C24F4D333BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99DFE799-3F05-4EE7-B624-C24F4D333BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99DFE799-3F05-4EE7-B624-C24F4D333BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99DFE799-3F05-4EE7-B624-C24F4D333BF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

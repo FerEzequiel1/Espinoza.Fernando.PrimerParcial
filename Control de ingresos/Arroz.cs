@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Control_de_ingresos
 {
     public class Arroz:Producto
@@ -58,8 +59,6 @@ namespace Control_de_ingresos
                 Precio = Precio * 1.3f;
             }
         }
-
-
 
         public override bool Equals(object? obj)
         {

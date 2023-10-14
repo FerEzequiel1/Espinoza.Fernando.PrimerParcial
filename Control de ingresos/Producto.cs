@@ -1,8 +1,16 @@
 ﻿using System.Drawing;
 using System.Text;
+using System.Xml;
+using System.Xml.Serialization;
+using System.IO;
+using System;
 
 namespace Control_de_ingresos
 {
+    [Serializable]
+    [XmlInclude(typeof(Gaseosa))]
+    [XmlInclude(typeof(Arroz))]
+    [XmlInclude(typeof(Salchicha))]
     public abstract class Producto
     {
         private string tipo;
@@ -87,6 +95,47 @@ namespace Control_de_ingresos
             return Precio * Cantidad;
         }
 
-        
+        public static void Serializar(ListaProductos lista, string path)
+        {
+            try
+            {
+                using (XmlTextWriter writer = new XmlTextWriter(path + @"DatosListas.xml", System.Text.Encoding.UTF8))
+                {
+                    XmlSerializer serializacion = new XmlSerializer(typeof(ListaProductos));
+
+                    serializacion.Serialize(writer, lista);
+                  
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static ListaProductos Deserializar(string path)
+        {
+            ListaProductos lista;
+            try
+            {
+                using (XmlTextReader reader = new XmlTextReader(path + @"DatosListas.xml"))
+                {
+                    XmlSerializer deserializacion = new XmlSerializer(typeof(ListaProductos));
+
+                    lista = (ListaProductos)deserializacion.Deserialize(reader);
+                    
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return lista;
+        }
+
     }
 }

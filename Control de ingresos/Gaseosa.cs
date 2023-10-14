@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Control_de_ingresos
 {
     public class Gaseosa:Producto

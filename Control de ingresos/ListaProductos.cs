@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Control_de_ingresos
 {
@@ -13,6 +15,10 @@ namespace Control_de_ingresos
         public ListaProductos(List<Producto> productos)
         {
             this.listaDeProductos = productos;
+        }
+        public ListaProductos()
+        {
+            
         }
 
         public List<Producto> ListaDeProductos { get => listaDeProductos; set => listaDeProductos = value; }
@@ -87,6 +93,7 @@ namespace Control_de_ingresos
             listaDeProductos = listaOrdenada;
 
         }
+
 
     }
 }

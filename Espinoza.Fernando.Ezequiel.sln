@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Control de ingresos", "Cont
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testeo", "Testeo\Testeo.csproj", "{F40BB953-F8C4-408B-9231-5EF3E1AA9CD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Login\Login.csproj", "{99DFE799-3F05-4EE7-B624-C24F4D333BF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aplicacion", "Login\Aplicacion.csproj", "{99DFE799-3F05-4EE7-B624-C24F4D333BF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{86A7C4E6-7CF0-45E5-B2E5-2DBEACDE7BA6}"
+	ProjectSection(SolutionItems) = preProject
+		DataUsuarios.json = DataUsuarios.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

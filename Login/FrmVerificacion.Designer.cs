@@ -2,7 +2,7 @@
 
 namespace Login
 {
-    partial class Form1
+    partial class FrmVerificacion
     {
         /// <summary>
         ///  Required designer variable.
@@ -33,8 +33,8 @@ namespace Login
         {
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtUsuario = new TextBox();
+            txtContraseña = new TextBox();
             btnIngresar = new Button();
             btnCancelar = new Button();
             SuspendLayout();
@@ -57,20 +57,20 @@ namespace Login
             label2.TabIndex = 1;
             label2.Text = "Ingrese su contraeña";
             // 
-            // textBox1
+            // txtUsuario
             // 
-            textBox1.Location = new Point(25, 38);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(113, 23);
-            textBox1.TabIndex = 2;
+            txtUsuario.Location = new Point(25, 38);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(113, 23);
+            txtUsuario.TabIndex = 2;
             // 
-            // textBox2
+            // txtContraseña
             // 
-            textBox2.Location = new Point(25, 93);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(113, 23);
-            textBox2.TabIndex = 3;
+            txtContraseña.Location = new Point(25, 93);
+            txtContraseña.Name = "txtContraseña";
+            txtContraseña.PasswordChar = '*';
+            txtContraseña.Size = new Size(113, 23);
+            txtContraseña.TabIndex = 3;
             // 
             // btnIngresar
             // 
@@ -80,6 +80,7 @@ namespace Login
             btnIngresar.TabIndex = 4;
             btnIngresar.Text = "Ingresar";
             btnIngresar.UseVisualStyleBackColor = true;
+            btnIngresar.Click += btnIngresar_Click;
             // 
             // btnCancelar
             // 
@@ -90,18 +91,18 @@ namespace Login
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // FrmVerificacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(173, 218);
             Controls.Add(btnCancelar);
             Controls.Add(btnIngresar);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtContraseña);
+            Controls.Add(txtUsuario);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Form1";
+            Name = "FrmVerificacion";
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
@@ -111,8 +112,8 @@ namespace Login
 
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUsuario;
+        private TextBox txtContraseña;
         private Button btnIngresar;
         private Button btnCancelar;
     }

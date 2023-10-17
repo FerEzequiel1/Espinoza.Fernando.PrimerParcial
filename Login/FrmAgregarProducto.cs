@@ -21,10 +21,7 @@ namespace Aplicacion
         {
             InitializeComponent();
             this.lista = lista;
-            buttonOcultar = new System.Windows.Forms.Button();
-            buttonOcultar.Text = "Botón a ocultar";
-            buttonOcultar.Location = new Point(565, 164);
-            this.Controls.Add(buttonOcultar);
+    
         }
         public FrmAgregarProducto()
         {
@@ -40,6 +37,10 @@ namespace Aplicacion
         public bool agregar(Producto p)
         {
             return lista + p;
+        }
+        public bool Comparar(Producto p)
+        {
+            return lista == p;
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)

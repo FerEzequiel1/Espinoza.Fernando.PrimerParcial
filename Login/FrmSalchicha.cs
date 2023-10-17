@@ -27,8 +27,16 @@ namespace Aplicacion
             if (marca != "no" && chancho && nombre)
             {
                 Salchicha salchicha = new Salchicha(base.txtNombre.Text, base.txtTipo.Text, (EMarca)Enum.Parse(typeof(EMarca), marca), (int)base.nUDCantidad.Value, (float)base.nUDPrecio.Value, (int)this.nUDUnidades.Value, this.txtChancho.Text);
-                base.agregar(salchicha);
-                base.LimpiarCampos();
+        
+                if (base.Comparar(salchicha))
+                {
+                    MessageBox.Show($"El producto que intenta ingresar ya existe", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    base.agregar(salchicha);
+                    base.LimpiarCampos();
+                }
             }
         }
         private bool VerificarChancho()
@@ -43,9 +51,7 @@ namespace Aplicacion
             {
                 MessageBox.Show($"Debe responder con si/no tiene chancho.", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
-
             return valor;
-
         }
     }
 }

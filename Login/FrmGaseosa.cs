@@ -26,8 +26,16 @@ namespace Aplicacion
             if (marca != "no" && nombre)
             {
                 Gaseosa gaseosa = new Gaseosa(base.txtNombre.Text,base.txtTipo.Text, (EMarca)Enum.Parse(typeof(EMarca), marca),(int)base.nUDCantidad.Value,(float)base.nUDPrecio.Value,(float)this.nUDMililitros.Value,this.txtSabor.Text);
-                base.agregar(gaseosa);
-                base.LimpiarCampos();
+
+                if (base.Comparar(gaseosa))
+                {
+                    MessageBox.Show($"El producto que intenta ingresar ya existe", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    base.agregar(gaseosa);
+                    base.LimpiarCampos();
+                }
             }
         }
     }

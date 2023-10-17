@@ -48,6 +48,7 @@ namespace Login
                         FrmInicio frmInicio = new FrmInicio();
                         frmInicio.StartPosition = FormStartPosition.CenterScreen;
 
+                        frmVerificacion.DialogResult= DialogResult.Cancel;
                         Application.Run(frmInicio);
                     }
                 }

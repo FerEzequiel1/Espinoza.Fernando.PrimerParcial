@@ -11,12 +11,11 @@ using System.Windows.Forms;
 
 namespace Aplicacion
 {
-    public partial class FrmAarroz : FrmGaseosa
+    public partial class FrmAarroz : FrmAgregarProducto
     {
         public FrmAarroz(ListaProductos lista) : base(lista)
         {
             InitializeComponent();
         }
-
     }
 }

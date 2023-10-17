@@ -28,16 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ((System.ComponentModel.ISupportInitialize)nUDMililitros).BeginInit();
+            gpArmado.SuspendLayout();
             SuspendLayout();
-            // 
-            // txtSabor
-            // 
-            txtSabor.Size = new Size(152, 23);
-            // 
-            // cmbMarca
-            // 
-            cmbMarca.Items.AddRange(new object[] { "SevenUp", "Pepsi", "Trapal" });
             // 
             // FrmAarroz
             // 
@@ -45,8 +37,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(975, 494);
             Name = "FrmAarroz";
-            Text = "Ingreso Aarroz";
-            ((System.ComponentModel.ISupportInitialize)nUDMililitros).EndInit();
+            Text = "FrmAarroz";
+            gpArmado.ResumeLayout(false);
+            gpArmado.PerformLayout();
             ResumeLayout(false);
         }
 

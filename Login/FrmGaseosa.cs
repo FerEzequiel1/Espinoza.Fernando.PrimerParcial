@@ -14,14 +14,17 @@ namespace Aplicacion
 {
     public partial class FrmGaseosa : Form
     {
-        internal Usuario usuario;
         internal ListaProductos lista;
-        public FrmGaseosa(Usuario usuario, ListaProductos lista)
+        public FrmGaseosa(ListaProductos lista)
         {
             InitializeComponent();
-            this.usuario = usuario;
             this.lista = lista;
         }
+        public FrmGaseosa()
+        {
+            InitializeComponent();
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

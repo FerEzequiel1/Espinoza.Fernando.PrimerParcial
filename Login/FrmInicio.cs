@@ -44,7 +44,7 @@ namespace Aplicacion
         private void gaseosaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            FrmGaseosa frmGaseosa = new FrmGaseosa(this.usuario, this.listaDeProductos);
+            FrmGaseosa frmGaseosa = new FrmGaseosa(this.listaDeProductos);
             frmGaseosa.StartPosition = FormStartPosition.CenterScreen;
             frmGaseosa.ShowDialog();
 
@@ -57,7 +57,7 @@ namespace Aplicacion
         }
         private void arrozToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmAarroz frmAarroz = new FrmAarroz(this.usuario, this.listaDeProductos);
+            FrmAarroz frmAarroz = new FrmAarroz(this.listaDeProductos);
             frmAarroz.StartPosition = FormStartPosition.CenterScreen;
             frmAarroz.ShowDialog();
 

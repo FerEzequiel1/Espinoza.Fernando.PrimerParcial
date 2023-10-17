@@ -28,10 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FrmAarroz";
+            ((System.ComponentModel.ISupportInitialize)nUDMililitros).BeginInit();
+            SuspendLayout();
+            // 
+            // txtSabor
+            // 
+            txtSabor.Size = new Size(152, 23);
+            // 
+            // cmbMarca
+            // 
+            cmbMarca.Items.AddRange(new object[] { "SevenUp", "Pepsi", "Trapal" });
+            // 
+            // FrmAarroz
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(975, 494);
+            Name = "FrmAarroz";
+            Text = "Ingreso Aarroz";
+            ((System.ComponentModel.ISupportInitialize)nUDMililitros).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

@@ -13,10 +13,10 @@ namespace Aplicacion
 {
     public partial class FrmAarroz : FrmGaseosa
     {
-
-        public FrmAarroz(Usuario usuario,ListaProductos lista):base(usuario,lista)
+        public FrmAarroz(ListaProductos lista) : base(lista)
         {
             InitializeComponent();
         }
+
     }
 }

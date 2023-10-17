@@ -54,13 +54,15 @@
             // 
             // btnAgregar
             // 
+            btnAgregar.BackColor = Color.LimeGreen;
             btnAgregar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAgregar.ForeColor = Color.White;
             btnAgregar.Location = new Point(629, 273);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(75, 30);
             btnAgregar.TabIndex = 1;
             btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += button1_Click;
             // 
             // btnVolver
@@ -101,13 +103,15 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.BackColor = Color.Red;
             btnCancelar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelar.ForeColor = Color.White;
             btnCancelar.Location = new Point(492, 273);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(81, 30);
             btnCancelar.TabIndex = 14;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // label7
@@ -171,7 +175,7 @@
             // cmbMarca
             // 
             cmbMarca.FormattingEnabled = true;
-            cmbMarca.Items.AddRange(new object[] { "SevenUp", "Pepsi", "Gallo", "Vienissima", "Swift", "Trapal" });
+            cmbMarca.Items.AddRange(new object[] { "SevenUp", "Pepsi", "Trapal" });
             cmbMarca.Location = new Point(565, 49);
             cmbMarca.Name = "cmbMarca";
             cmbMarca.Size = new Size(124, 23);
@@ -261,16 +265,16 @@
         private Label label2;
         private TextBox txtNombre;
         private Label label1;
-        private TextBox txtSabor;
         private Label label3;
         private NumericUpDown nUDCantidad;
-        private ComboBox cmbMarca;
         private Label label4;
         private NumericUpDown nUDPrecio;
         private Label label5;
-        private NumericUpDown nUDMililitros;
-        private Label label6;
         private Button btnCancelar;
-        private Label label7;
+        public TextBox txtSabor;
+        public NumericUpDown nUDMililitros;
+        public Label label6;
+        public Label label7;
+        public ComboBox cmbMarca;
     }
 }

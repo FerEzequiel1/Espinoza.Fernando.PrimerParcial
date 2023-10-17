@@ -45,7 +45,7 @@ namespace Login
                     if (frmVerificacion.UsuarioIngresante != null)
                     {
 
-                        FrmInicio frmInicio = new FrmInicio();
+                        FrmInicio frmInicio = new FrmInicio(frmVerificacion.UsuarioIngresante);
                         frmInicio.StartPosition = FormStartPosition.CenterScreen;
 
                         frmVerificacion.DialogResult= DialogResult.Cancel;

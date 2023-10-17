@@ -20,7 +20,7 @@ namespace Control_de_ingresos
 
         public override string ToString()
         {
-            return $"Usuario:{this.nombre} {this.apellido}";
+            return $"Usuario:{this.nombre} {this.apellido}   Legajo:{this.legajo}";
         }
     }
 }

@@ -38,7 +38,7 @@ internal class Program
         path += @"\Mayorista Trapal";
 
         Producto.Serializar(listaDeProductos, path);
-        listaDeProductos = Producto.Deserializar(path);
+        //listaDeProductos = Producto.Deserializar(path);
 
         
 

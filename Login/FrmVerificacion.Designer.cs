@@ -76,6 +76,7 @@ namespace Login
             // 
             // btnIngresar
             // 
+            btnIngresar.DialogResult = DialogResult.OK;
             btnIngresar.Location = new Point(69, 132);
             btnIngresar.Name = "btnIngresar";
             btnIngresar.Size = new Size(211, 36);

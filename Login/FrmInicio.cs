@@ -44,11 +44,16 @@ namespace Aplicacion
         private void gaseosaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            FrmGaseosa frmGaseosa = new FrmGaseosa();
+            FrmGaseosa frmGaseosa = new FrmGaseosa(this.usuario,this.listaDeProductos);
+            frmGaseosa.StartPosition = FormStartPosition.CenterScreen;
             frmGaseosa.ShowDialog();
 
-
-
+            if(frmGaseosa.DialogResult == DialogResult.OK)
+            {
+                this.listaDeProductos = frmGaseosa.lista;
+            }
+            PublicarProductos();
+            
         }
 
         private void btnOrdenar_Click(object sender, EventArgs e)
@@ -71,12 +76,13 @@ namespace Aplicacion
                 listaDeProductos.OrdenPorPrecioCantidad("Ascendente", "Precio total");
             }
 
-            lstProductos.Items.Clear();
+            
             PublicarProductos();
         }
 
         public void PublicarProductos()
         {
+            lstProductos.Items.Clear();
             foreach (Producto p in this.listaDeProductos.ListaDeProductos)
             {
                 lstProductos.Items.Add(p);

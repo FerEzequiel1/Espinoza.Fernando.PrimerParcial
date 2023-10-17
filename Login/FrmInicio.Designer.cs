@@ -214,20 +214,21 @@
             // gaseosaToolStripMenuItem
             // 
             gaseosaToolStripMenuItem.Name = "gaseosaToolStripMenuItem";
-            gaseosaToolStripMenuItem.Size = new Size(145, 26);
+            gaseosaToolStripMenuItem.Size = new Size(180, 26);
             gaseosaToolStripMenuItem.Text = "Gaseosa";
             gaseosaToolStripMenuItem.Click += gaseosaToolStripMenuItem_Click;
             // 
             // arrozToolStripMenuItem
             // 
             arrozToolStripMenuItem.Name = "arrozToolStripMenuItem";
-            arrozToolStripMenuItem.Size = new Size(145, 26);
+            arrozToolStripMenuItem.Size = new Size(180, 26);
             arrozToolStripMenuItem.Text = "Arroz";
+            arrozToolStripMenuItem.Click += arrozToolStripMenuItem_Click;
             // 
             // salchichaToolStripMenuItem
             // 
             salchichaToolStripMenuItem.Name = "salchichaToolStripMenuItem";
-            salchichaToolStripMenuItem.Size = new Size(145, 26);
+            salchichaToolStripMenuItem.Size = new Size(180, 26);
             salchichaToolStripMenuItem.Text = "Salchicha";
             // 
             // eliminarProductoToolStripMenuItem

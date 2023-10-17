@@ -44,16 +44,29 @@ namespace Aplicacion
         private void gaseosaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            FrmGaseosa frmGaseosa = new FrmGaseosa(this.usuario,this.listaDeProductos);
+            FrmGaseosa frmGaseosa = new FrmGaseosa(this.usuario, this.listaDeProductos);
             frmGaseosa.StartPosition = FormStartPosition.CenterScreen;
             frmGaseosa.ShowDialog();
 
-            if(frmGaseosa.DialogResult == DialogResult.OK)
+            if (frmGaseosa.DialogResult == DialogResult.OK)
             {
                 this.listaDeProductos = frmGaseosa.lista;
             }
             PublicarProductos();
-            
+
+        }
+        private void arrozToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAarroz frmAarroz = new FrmAarroz(this.usuario, this.listaDeProductos);
+            frmAarroz.StartPosition = FormStartPosition.CenterScreen;
+            frmAarroz.ShowDialog();
+
+            if (frmAarroz.DialogResult == DialogResult.OK)
+            {
+                this.listaDeProductos = frmAarroz.lista;
+            }
+            PublicarProductos();
+
         }
 
         private void btnOrdenar_Click(object sender, EventArgs e)
@@ -76,7 +89,7 @@ namespace Aplicacion
                 listaDeProductos.OrdenPorPrecioCantidad("Ascendente", "Precio total");
             }
 
-            
+
             PublicarProductos();
         }
 
@@ -89,5 +102,6 @@ namespace Aplicacion
                 lstProductos.Items.Add("\n");
             }
         }
+
     }
 }

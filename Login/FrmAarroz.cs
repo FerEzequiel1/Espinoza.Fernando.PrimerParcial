@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Control_de_ingresos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,10 @@ using System.Windows.Forms;
 
 namespace Aplicacion
 {
-    public partial class FrmAarroz : Form
+    public partial class FrmAarroz : FrmGaseosa
     {
-        public FrmAarroz()
+
+        public FrmAarroz(Usuario usuario,ListaProductos lista):base(usuario,lista)
         {
             InitializeComponent();
         }

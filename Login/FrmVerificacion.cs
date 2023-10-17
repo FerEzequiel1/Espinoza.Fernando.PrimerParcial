@@ -59,7 +59,21 @@ namespace Login
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel; 
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkContraseña.Checked)
+            {
+                this.txtContraseña.PasswordChar = '\0';
+
+            }
+            else
+            {
+                this.txtContraseña.PasswordChar = '*';
+
+            }
         }
     }
 }

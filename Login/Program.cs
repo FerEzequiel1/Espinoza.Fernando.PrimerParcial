@@ -51,6 +51,7 @@ namespace Login
                         frmVerificacion.DialogResult= DialogResult.Cancel;
                         Application.Run(frmInicio);
                     }
+                    
                 }
             }
             catch (Exception ex)

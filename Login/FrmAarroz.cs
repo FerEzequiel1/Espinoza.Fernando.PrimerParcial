@@ -21,8 +21,9 @@ namespace Aplicacion
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             string marca = base.VerificarMarca();
+            bool nombre = base.VerificarNombreTipo();
 
-            if (marca != "no")
+            if (marca != "no" && nombre)
             {
                 Arroz arroz = new Arroz(base.txtNombre.Text, base.txtTipo.Text, (EMarca)Enum.Parse(typeof(EMarca), marca), (int)base.nUDCantidad.Value, (float)base.nUDPrecio.Value,this.txtOrigen.Text, this.txtProveedor.Text);
                 base.agregar(arroz);

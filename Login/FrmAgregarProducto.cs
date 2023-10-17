@@ -34,7 +34,7 @@ namespace Aplicacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
 
         }
         public bool agregar(Producto p)
@@ -56,7 +56,7 @@ namespace Aplicacion
                 rta = cmbMarca.SelectedItem.ToString();
 
             }
-            else if (cmbMarca.Text == "Ingrese una opción")  
+            else if (cmbMarca.Text == "Ingrese una opción")
             {
                 MessageBox.Show($"Debe seleccionar una marca.", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
@@ -64,6 +64,23 @@ namespace Aplicacion
             {
                 MessageBox.Show($"Debe seleccionar una marca.{this.cmbMarca.Text} no aceptada", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
+
+            return rta;
+        }
+        protected bool VerificarNombreTipo()
+        {
+            bool rta = false;
+
+            if(this.txtNombre.Text.Length > 0 && this.txtTipo.Text.Length>0)
+            {
+                rta = true;
+            }
+            else
+            {
+                MessageBox.Show($"Debe completar el nombre y/o tipo", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+
+
 
             return rta;
         }

@@ -230,6 +230,7 @@
             salchichaToolStripMenuItem.Name = "salchichaToolStripMenuItem";
             salchichaToolStripMenuItem.Size = new Size(180, 26);
             salchichaToolStripMenuItem.Text = "Salchicha";
+            salchichaToolStripMenuItem.Click += salchichaToolStripMenuItem_Click;
             // 
             // eliminarProductoToolStripMenuItem
             // 

@@ -137,7 +137,7 @@
             // cmbMarca
             // 
             cmbMarca.FormattingEnabled = true;
-            cmbMarca.Items.AddRange(new object[] { "SevenUp", "Pepsi", "Trapal" });
+            cmbMarca.Items.AddRange(new object[] { " SevenUp", " Pepsi", " Gallo", " Vienissima", " Swift", " Trapal" });
             cmbMarca.Location = new Point(565, 49);
             cmbMarca.Name = "cmbMarca";
             cmbMarca.Size = new Size(124, 23);

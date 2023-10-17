@@ -68,6 +68,19 @@ namespace Aplicacion
             PublicarProductos();
 
         }
+        private void salchichaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSalchicha frmSalchica = new FrmSalchicha(this.listaDeProductos);
+            frmSalchica.StartPosition = FormStartPosition.CenterScreen;
+            frmSalchica.ShowDialog();
+
+            if (frmSalchica.DialogResult == DialogResult.OK)
+            {
+                this.listaDeProductos = frmSalchica.lista;
+            }
+            PublicarProductos();
+
+        }
 
         private void btnOrdenar_Click(object sender, EventArgs e)
         {

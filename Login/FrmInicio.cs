@@ -36,7 +36,6 @@ namespace Aplicacion
             path += @"\Mayorista Trapal";
 
             this.listaDeProductos = Producto.Deserializar(path);
-
             PublicarProductos();
 
 

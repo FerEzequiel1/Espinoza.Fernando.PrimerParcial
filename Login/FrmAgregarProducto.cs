@@ -34,7 +34,7 @@ namespace Aplicacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string marca = VerificarMarca();
+            
 
         }
         public bool agregar(Producto p)
@@ -42,12 +42,12 @@ namespace Aplicacion
             return lista + p;
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
+        protected void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private string VerificarMarca()
+        protected string VerificarMarca()
         {
             string rta = "no";
 
@@ -56,10 +56,23 @@ namespace Aplicacion
                 rta = cmbMarca.SelectedItem.ToString();
 
             }
+            else if (cmbMarca.Text == "Ingrese una opción")  
+            {
+                MessageBox.Show($"Debe seleccionar una marca.", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+            else
+            {
+                MessageBox.Show($"Debe seleccionar una marca.{this.cmbMarca.Text} no aceptada", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
 
             return rta;
         }
-        private void LimpiarCampos()
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
+
+        protected void LimpiarCampos()
         {
 
             foreach (Control control in this.Controls)
@@ -84,10 +97,6 @@ namespace Aplicacion
                     }
                 }
             }
-        }
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            LimpiarCampos();
         }
     }
 }

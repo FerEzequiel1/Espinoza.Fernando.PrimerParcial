@@ -17,5 +17,17 @@ namespace Aplicacion
         {
             InitializeComponent();
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            string marca = base.VerificarMarca();
+
+            if (marca != "no")
+            {
+                Gaseosa gaseosa = new Gaseosa(base.txtNombre.Text,base.txtTipo.Text, (EMarca)Enum.Parse(typeof(EMarca), marca),(int)base.nUDCantidad.Value,(float)base.nUDPrecio.Value,(float)this.nUDMililitros.Value,this.txtSabor.Text);
+                base.agregar(gaseosa);
+                base.LimpiarCampos();
+            }
+        }
     }
 }

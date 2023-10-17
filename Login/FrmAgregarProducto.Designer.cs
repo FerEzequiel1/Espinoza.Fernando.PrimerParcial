@@ -213,18 +213,18 @@
 
         #endregion
         private Button btnVolver;
-        private TextBox txtTipo;
         private Label label2;
-        private TextBox txtNombre;
         private Label label1;
         private Label label3;
-        private NumericUpDown nUDCantidad;
         private Label label4;
-        private NumericUpDown nUDPrecio;
         private Label label5;
         private Button btnCancelar;
         public ComboBox cmbMarca;
         public Button btnAgregar;
         public GroupBox gpArmado;
+        protected TextBox txtNombre;
+        protected TextBox txtTipo;
+        protected NumericUpDown nUDCantidad;
+        protected NumericUpDown nUDPrecio;
     }
 }

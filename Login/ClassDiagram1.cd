@@ -6,14 +6,14 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAhEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="Aplicacion.FrmAarroz" Collapsed="true">
-    <Position X="7.5" Y="2.75" Width="1.5" />
+  <Class Name="Aplicacion.FrmAarroz">
+    <Position X="5.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACCAABAAAACgAAACAAAAAAAAAAAAAAAAEAA=</HashCode>
       <FileName>FrmAarroz.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Aplicacion.FrmAgregarProducto" Collapsed="true">
+  <Class Name="Aplicacion.FrmAgregarProducto">
     <Position X="7.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>wBAAIAACACEAAJRAAACAAAAiASBAAAAAAEACAAAAFAA=</HashCode>
@@ -27,15 +27,15 @@
       <FileName>FrmEliminar.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Aplicacion.FrmGaseosa" Collapsed="true">
-    <Position X="5.25" Y="2.75" Width="1.5" />
+  <Class Name="Aplicacion.FrmGaseosa">
+    <Position X="9.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACCAABAAAACAAAAqAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FrmGaseosa.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Aplicacion.FrmGaseosaPorMayor" Collapsed="true">
-    <Position X="9.75" Y="2.75" Width="1.5" />
+  <Class Name="Aplicacion.FrmGaseosaPorMayor">
+    <Position X="5.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACCAABAAAFCAAAAmAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FrmGaseosaPorMayor.cs</FileName>

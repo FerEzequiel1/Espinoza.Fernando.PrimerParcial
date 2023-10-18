@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            btnCargar = new Button();
+            btnGuardar = new Button();
             groupBox2 = new GroupBox();
             btnOrdenar = new Button();
             groupBox4 = new GroupBox();
@@ -57,6 +59,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnCargar);
+            groupBox1.Controls.Add(btnGuardar);
             groupBox1.Controls.Add(groupBox2);
             groupBox1.Controls.Add(lstProductos);
             groupBox1.Location = new Point(35, 49);
@@ -65,6 +69,28 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Productos";
+            // 
+            // btnCargar
+            // 
+            btnCargar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCargar.Location = new Point(564, 323);
+            btnCargar.Name = "btnCargar";
+            btnCargar.Size = new Size(116, 57);
+            btnCargar.TabIndex = 3;
+            btnCargar.Text = "Cargar nuevos productos";
+            btnCargar.UseVisualStyleBackColor = true;
+            btnCargar.Click += btnCargar_Click;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGuardar.Location = new Point(686, 323);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(116, 57);
+            btnGuardar.TabIndex = 2;
+            btnGuardar.Text = "Guardar cambios";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // groupBox2
             // 
@@ -258,7 +284,7 @@
             IsMdiContainer = true;
             Name = "FrmInicio";
             Text = "Form1";
-            FormClosed += FrmInicio_FormClosed;
+            FormClosing += FrmInicio_FormClosing;
             Load += FrmInicio_Load;
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
@@ -294,5 +320,7 @@
         private GroupBox groupBox4;
         private GroupBox groupBox3;
         private Button btnOrdenar;
+        private Button btnGuardar;
+        private Button btnCargar;
     }
 }

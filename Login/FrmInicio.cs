@@ -10,12 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace Aplicacion
 {
     public partial class FrmInicio : Form
     {
         internal Usuario usuario;
+        internal bool guardado;
         public ListaProductos listaDeProductos;
         public FrmInicio()
         {
@@ -141,14 +143,6 @@ namespace Aplicacion
 
         }
 
-        private void FrmInicio_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
-            string path = Path();
-
-            Producto.Serializar(this.listaDeProductos, path);
-        }
-
         private string Path()
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -192,7 +186,73 @@ namespace Aplicacion
             FrmHistorial frmHistorial = new FrmHistorial(path);
             frmHistorial.StartPosition = FormStartPosition.CenterScreen;
             frmHistorial.Show();
+
+        }
+
+        private void FrmInicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            DialogResult resultado = MessageBox.Show("¿Realmente desea cerrar el formulario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.No)
+            {
+                e.Cancel = true; // Cancelar el cierre del formulario
+            }
             
+            if(this.guardado == false)
+            {
+                DialogResult guardado = MessageBox.Show("¿Desea cerrar el formulario sin guardar los cambios?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (guardado == DialogResult.No)
+                {
+                    e.Cancel = true; // Cancelar el cierre del formulario si escoje guardar
+                }
+            }
+            
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.Title = "Guardar archivo XML";
+            saveFileDialog.Filter = "Archivos XML (*.xml)|*.xml";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string rutaArchivo = saveFileDialog.FileName;
+
+                // Realizar la serialización en el archivo XML seleccionado
+                using (FileStream stream = new FileStream(rutaArchivo, FileMode.Create))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(ListaProductos));
+                    serializer.Serialize(stream, this.listaDeProductos);
+                    this.guardado = true;   
+                }
+
+            }
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Title = "Seleccionar archivo XML para deserialización";
+            openFileDialog.Filter = "Archivos XML (*.xml)|*.xml";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string rutaArchivo = openFileDialog.FileName;
+
+                // Realizar la deserialización desde el archivo XML seleccionado
+                using (FileStream stream = new FileStream(rutaArchivo, FileMode.Open))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(ListaProductos));
+                    ListaProductos tuObjetoDeserializado = (ListaProductos)serializer.Deserialize(stream);
+                    this.listaDeProductos = tuObjetoDeserializado;
+                    PublicarProductos();
+                }
+
+            }
         }
     }
 }

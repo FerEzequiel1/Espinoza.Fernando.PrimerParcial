@@ -56,6 +56,8 @@ namespace Login
             }
             catch (Exception ex)
             {
+                MessageBox.Show($"Error del tipo {ex}", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
         

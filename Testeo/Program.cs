@@ -17,9 +17,9 @@ internal class Program
         Gaseosa gaseosa1 = new Gaseosa("Seven up", "Gaseosa", (EMarca)Enum.Parse(typeof(EMarca), "SevenUp"), 3, 500f,3f,"Lima");
         Gaseosa gaseosa2 = new Gaseosa("Pepsi", "Gaseosa", (EMarca)Enum.Parse(typeof(EMarca), "Pepsi"), 3, 500f, 3f, "Cola");
 
-        Salchicha salchicha1 = new Salchicha("Trini", "Salchicha", (EMarca)Enum.Parse(typeof(EMarca), "Vienissima"), 4, 300f,12,"No");
-        Salchicha salchicha2 = new Salchicha("Don Antonio", "Salchicha", (EMarca)Enum.Parse(typeof(EMarca), "Swift"), 4, 150f,6,"si");
-        Salchicha comboSalchicha = salchicha1 + salchicha2;
+        GaseosaPorMayor gaseosaPorMayor1 = new GaseosaPorMayor("Trini", "Gaseosa Mayorista", (EMarca)Enum.Parse(typeof(EMarca), "Vienissima"), 4, 300f,500f,"Uva",1000,"Si");
+        GaseosaPorMayor gaseosaPorMayor2 = new GaseosaPorMayor("Don Antonio", "Gaseosa Mayorista", (EMarca)Enum.Parse(typeof(EMarca), "Swift"), 4, 150f,500f,"Naranja",500,"No");
+        GaseosaPorMayor gaseosaPorMayor3 = gaseosaPorMayor1 + gaseosaPorMayor2;
 
         List<Producto> productos   = new List<Producto>();
 
@@ -28,9 +28,9 @@ internal class Program
         productos.Add(comboArroz);
         productos.Add(gaseosa1);
         productos.Add(gaseosa2);
-        productos.Add(salchicha1);
-        productos.Add(salchicha2);
-        productos.Add(comboSalchicha);
+        productos.Add(gaseosaPorMayor1);
+        productos.Add(gaseosaPorMayor2);
+        productos.Add(gaseosaPorMayor3);
 
         ListaProductos listaDeProductos = new(productos);
 

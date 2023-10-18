@@ -25,7 +25,7 @@ namespace Aplicacion
 
             if (marca != "no" && nombre)
             {
-                Gaseosa gaseosa = new Gaseosa(base.txtNombre.Text,base.txtTipo.Text, (EMarca)Enum.Parse(typeof(EMarca), marca),(int)base.nUDCantidad.Value,(float)base.nUDPrecio.Value,(float)this.nUDMililitros.Value,this.txtSabor.Text);
+                Gaseosa gaseosa = new Gaseosa(base.txtNombre.Text, base.txtTipo.Text, (EMarca)Enum.Parse(typeof(EMarca), marca), (int)base.nUDCantidad.Value, (float)base.nUDPrecio.Value, (float)this.nUDMililitros.Value, this.txtSabor.Text);
 
                 if (base.Comparar(gaseosa))
                 {

@@ -35,9 +35,9 @@ namespace Login
         private Usuario Verificar()
         {
             Usuario rta = null;
-            
 
-            using (System.IO.StreamReader sr = new System.IO.StreamReader(@"..\\..\\..\\DataUsuarios.json")) 
+
+            using (System.IO.StreamReader sr = new System.IO.StreamReader(@"..\\..\\..\\DataUsuarios.json"))
             {
                 System.Text.Json.JsonSerializerOptions opciones = new System.Text.Json.JsonSerializerOptions();
                 opciones.WriteIndented = true;

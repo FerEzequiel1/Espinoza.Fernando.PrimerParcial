@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Aplicacion.Properties.Resources" Collapsed="true">
+    <Position X="15.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAhEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aplicacion.FrmAarroz" Collapsed="true">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACCAABAAAACgAAACAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>FrmAarroz.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aplicacion.FrmAgregarProducto" Collapsed="true">
+    <Position X="7.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wBAAIAACACEAAJRAAACAAAAiASBAAAAAAEACAAAAFAA=</HashCode>
+      <FileName>FrmAgregarProducto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aplicacion.FrmEliminar" Collapsed="true">
+    <Position X="12.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACQAABBAAACAAAACCAAIAAAAAnAAAAAAAAA=</HashCode>
+      <FileName>FrmEliminar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aplicacion.FrmGaseosa" Collapsed="true">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACCAABAAAACAAAAqAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FrmGaseosa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aplicacion.FrmGaseosaPorMayor" Collapsed="true">
+    <Position X="9.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACCAABAAAFCAAAAmAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FrmGaseosaPorMayor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aplicacion.FrmHistorial" Collapsed="true">
+    <Position X="14" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAgBQAAACCAAECAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FrmHistorial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aplicacion.FrmInicio" Collapsed="true">
+    <Position X="15.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQAAAQgAAqAADhoRAgCCAEETAQAASAwCAiIBBAgUAAg=</HashCode>
+      <FileName>FrmInicio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.FrmVerificacion" Collapsed="true">
+    <Position X="12.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAACAAAZEAAACAAAACAABAAGQIAAAAEAAgAAA=</HashCode>
+      <FileName>FrmVerificacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Login.Program" Collapsed="true">
+    <Position X="14" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Control_de_ingresos.Usuario" Collapsed="true">
+    <Position X="12.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQBAACEAAAAAAAAAAQAAACAAAAQAAAAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

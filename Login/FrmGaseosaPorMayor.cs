@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Aplicacion
 {
-    public partial class FrmSalchicha : FrmAgregarProducto
+    public partial class FrmGaseosaPorMayor : FrmAgregarProducto
     {
-        public FrmSalchicha(ListaProductos lista) : base(lista)
+        public FrmGaseosaPorMayor(ListaProductos lista) : base(lista)
         {
             InitializeComponent();
         }
@@ -21,35 +21,36 @@ namespace Aplicacion
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             string marca = base.VerificarMarca();
-            bool chancho = VerificarChancho();
+            bool chancho = VerificarArtesanal();
             bool nombre = base.VerificarNombreTipo();
 
             if (marca != "no" && chancho && nombre)
             {
-                Salchicha salchicha = new Salchicha(base.txtNombre.Text, base.txtTipo.Text, (EMarca)Enum.Parse(typeof(EMarca), marca), (int)base.nUDCantidad.Value, (float)base.nUDPrecio.Value, (int)this.nUDUnidades.Value, this.txtChancho.Text);
-        
-                if (base.Comparar(salchicha))
+
+                GaseosaPorMayor gaseosaPorMayor = new GaseosaPorMayor(base.txtNombre.Text, base.txtTipo.Text, (EMarca)Enum.Parse(typeof(EMarca), marca), (int)base.nUDCantidad.Value, (float)base.nUDPrecio.Value, (float)this.nUDMLL.Value, this.txtSabor.Text, (int)this.nUDUnidades.Value);
+
+                if (base.Comparar(gaseosaPorMayor))
                 {
                     MessageBox.Show($"El producto que intenta ingresar ya existe", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    base.agregar(salchicha);
+                    base.agregar(gaseosaPorMayor);
                     base.LimpiarCampos();
                 }
             }
         }
-        private bool VerificarChancho()
+        private bool VerificarArtesanal()
         {
             bool valor = false;
 
-            if (this.txtChancho.Text == "si" || this.txtChancho.Text == "no")
+            if (this.txtArtesanal.Text == "Si" || this.txtArtesanal.Text == "No")
             {
-                valor = true;  
+                valor = true;
             }
             else
             {
-                MessageBox.Show($"Debe responder con si/no tiene chancho.", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                MessageBox.Show($"Debe responder con Si/No tiene chancho.", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
             return valor;
         }

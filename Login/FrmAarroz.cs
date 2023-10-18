@@ -25,8 +25,8 @@ namespace Aplicacion
 
             if (marca != "no" && nombre)
             {
-                Arroz arroz = new Arroz(base.txtNombre.Text, base.txtTipo.Text, (EMarca)Enum.Parse(typeof(EMarca), marca), (int)base.nUDCantidad.Value, (float)base.nUDPrecio.Value,this.txtOrigen.Text, this.txtProveedor.Text);
-      
+                Arroz arroz = new Arroz(base.txtNombre.Text, base.txtTipo.Text, (EMarca)Enum.Parse(typeof(EMarca), marca), (int)base.nUDCantidad.Value, (float)base.nUDPrecio.Value, this.txtOrigen.Text, this.txtProveedor.Text);
+
                 if (base.Comparar(arroz))
                 {
                     MessageBox.Show($"El producto que intenta ingresar ya existe", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Question);
@@ -36,7 +36,7 @@ namespace Aplicacion
                     base.agregar(arroz);
                     base.LimpiarCampos();
                 }
-            } 
+            }
         }
     }
 }

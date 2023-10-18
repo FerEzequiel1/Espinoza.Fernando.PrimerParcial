@@ -65,7 +65,7 @@
             groupBox1.Controls.Add(lstProductos);
             groupBox1.Location = new Point(35, 49);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(896, 416);
+            groupBox1.Size = new Size(1101, 416);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Productos";
@@ -73,7 +73,7 @@
             // btnCargar
             // 
             btnCargar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCargar.Location = new Point(564, 323);
+            btnCargar.Location = new Point(727, 316);
             btnCargar.Name = "btnCargar";
             btnCargar.Size = new Size(116, 57);
             btnCargar.TabIndex = 3;
@@ -84,7 +84,7 @@
             // btnGuardar
             // 
             btnGuardar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnGuardar.Location = new Point(686, 323);
+            btnGuardar.Location = new Point(903, 316);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(116, 57);
             btnGuardar.TabIndex = 2;
@@ -186,7 +186,7 @@
             lstProductos.ItemHeight = 15;
             lstProductos.Location = new Point(15, 22);
             lstProductos.Name = "lstProductos";
-            lstProductos.Size = new Size(848, 274);
+            lstProductos.Size = new Size(1053, 274);
             lstProductos.TabIndex = 0;
             // 
             // label1
@@ -205,7 +205,7 @@
             // 
             lblUsuario.AutoSize = true;
             lblUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblUsuario.Location = new Point(636, 0);
+            lblUsuario.Location = new Point(742, 4);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(52, 21);
             lblUsuario.TabIndex = 6;
@@ -240,22 +240,22 @@
             // gaseosaToolStripMenuItem
             // 
             gaseosaToolStripMenuItem.Name = "gaseosaToolStripMenuItem";
-            gaseosaToolStripMenuItem.Size = new Size(145, 26);
+            gaseosaToolStripMenuItem.Size = new Size(222, 26);
             gaseosaToolStripMenuItem.Text = "Gaseosa";
             gaseosaToolStripMenuItem.Click += gaseosaToolStripMenuItem_Click;
             // 
             // arrozToolStripMenuItem
             // 
             arrozToolStripMenuItem.Name = "arrozToolStripMenuItem";
-            arrozToolStripMenuItem.Size = new Size(145, 26);
+            arrozToolStripMenuItem.Size = new Size(222, 26);
             arrozToolStripMenuItem.Text = "Arroz";
             arrozToolStripMenuItem.Click += arrozToolStripMenuItem_Click;
             // 
             // salchichaToolStripMenuItem
             // 
             salchichaToolStripMenuItem.Name = "salchichaToolStripMenuItem";
-            salchichaToolStripMenuItem.Size = new Size(145, 26);
-            salchichaToolStripMenuItem.Text = "Salchicha";
+            salchichaToolStripMenuItem.Size = new Size(222, 26);
+            salchichaToolStripMenuItem.Text = "Gaseosas por mayor";
             salchichaToolStripMenuItem.Click += salchichaToolStripMenuItem_Click;
             // 
             // eliminarProductoToolStripMenuItem
@@ -276,14 +276,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(975, 494);
+            ClientSize = new Size(1174, 494);
             Controls.Add(lblUsuario);
             Controls.Add(label1);
             Controls.Add(groupBox1);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             Name = "FrmInicio";
-            Text = "Form1";
+            Text = "Mayorista Trapal";
             FormClosing += FrmInicio_FormClosing;
             Load += FrmInicio_Load;
             groupBox1.ResumeLayout(false);

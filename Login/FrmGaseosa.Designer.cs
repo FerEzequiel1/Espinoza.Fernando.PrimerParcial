@@ -100,7 +100,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(975, 494);
             Name = "FrmGaseosa";
-            Text = "FrmGaseosa";
+            Text = "Ingreso de gaseosas";
             gpArmado.ResumeLayout(false);
             gpArmado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nUDCantidad).EndInit();

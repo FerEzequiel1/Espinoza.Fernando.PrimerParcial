@@ -30,14 +30,14 @@ namespace Aplicacion
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-           int indice = this.lsBProductos.SelectedIndex;
+            int indice = this.lsBProductos.SelectedIndex;
 
-           if (indice >= 0 )
+            if (indice >= 0)
             {
 
                 Producto producto = this.lista.ListaDeProductos[indice];

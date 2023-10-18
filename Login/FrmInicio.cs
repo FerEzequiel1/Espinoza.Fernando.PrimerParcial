@@ -53,7 +53,7 @@ namespace Aplicacion
         }
         private void salchichaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CrearFormulario("Salchica");
+            CrearFormulario("Gaseosa por mayor");
         }
         private void eliminarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -121,12 +121,12 @@ namespace Aplicacion
                     ActualizarLista(frmGaseosa);
                     break;
 
-                case "Salchica":
+                case "Gaseosa por mayor":
 
-                    FrmSalchicha frmSalchica = new FrmSalchicha(this.listaDeProductos);
-                    frmSalchica.StartPosition = FormStartPosition.CenterScreen;
-                    frmSalchica.ShowDialog();
-                    ActualizarLista(frmSalchica);
+                    FrmGaseosaPorMayor gaseosaPorMayor = new FrmGaseosaPorMayor(this.listaDeProductos);
+                    gaseosaPorMayor.StartPosition = FormStartPosition.CenterScreen;
+                    gaseosaPorMayor.ShowDialog();
+                    ActualizarLista(gaseosaPorMayor);
                     break;
             }
 
@@ -198,8 +198,8 @@ namespace Aplicacion
             {
                 e.Cancel = true; // Cancelar el cierre del formulario
             }
-            
-            if(this.guardado == false)
+
+            if (this.guardado == false)
             {
                 DialogResult guardado = MessageBox.Show("¿Desea cerrar el formulario sin guardar los cambios?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (guardado == DialogResult.No)
@@ -207,7 +207,7 @@ namespace Aplicacion
                     e.Cancel = true; // Cancelar el cierre del formulario si escoje guardar
                 }
             }
-            
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -226,7 +226,7 @@ namespace Aplicacion
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(ListaProductos));
                     serializer.Serialize(stream, this.listaDeProductos);
-                    this.guardado = true;   
+                    this.guardado = true;
                 }
 
             }

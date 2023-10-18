@@ -71,7 +71,7 @@
             Controls.Add(btnVolver);
             Controls.Add(lstHistorial);
             Name = "FrmHistorial";
-            Text = "FrmHistorial";
+            Text = "Historial";
             Load += FrmHistorial_Load;
             ResumeLayout(false);
             PerformLayout();

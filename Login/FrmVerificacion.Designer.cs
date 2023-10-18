@@ -123,7 +123,7 @@ namespace Login
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "FrmVerificacion";
-            Text = "Form1";
+            Text = "Login";
             ResumeLayout(false);
             PerformLayout();
         }

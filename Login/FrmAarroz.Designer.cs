@@ -96,7 +96,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(975, 494);
             Name = "FrmAarroz";
-            Text = "FrmAarroz";
+            Text = "Ingreso de Aarroz";
             gpArmado.ResumeLayout(false);
             gpArmado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nUDCantidad).EndInit();

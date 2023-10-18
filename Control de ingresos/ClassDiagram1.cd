@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Control_de_ingresos.Arroz" Collapsed="true">
+    <Position X="1.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAYAAAAGwACAAAAAAAAAAAACAAAAAgAAAiA=</HashCode>
+      <FileName>Arroz.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Control_de_ingresos.Gaseosa" Collapsed="true">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAASAAAAEwACAAAAAAAAAAAAAAAgAAAAIAiA=</HashCode>
+      <FileName>Gaseosa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Control_de_ingresos.ListaProductos" Collapsed="true">
+    <Position X="9.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABQAEAAAABBAAAAAAAAAAEAAAAAiA=</HashCode>
+      <FileName>ListaProductos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Control_de_ingresos.Producto" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAABBEAAAQQACCEgBCAgAAQAAAAEAAAQAAAAAAAAiQ=</HashCode>
+      <FileName>Producto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Control_de_ingresos.GaseosaPorMayor" Collapsed="true">
+    <Position X="6.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAUAAAAEwACAAABAAAAAQAAAAAAAAAAAAiA=</HashCode>
+      <FileName>GaseosaPorMayor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Control_de_ingresos.Usuario" Collapsed="true">
+    <Position X="11.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQBAACEAAAAAAAAAAQAAACAAAAQAAAAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="EMarca">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECgAAAAAAAgAAAAACAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Marca.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

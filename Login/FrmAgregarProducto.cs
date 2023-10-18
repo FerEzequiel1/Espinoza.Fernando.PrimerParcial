@@ -15,7 +15,6 @@ namespace Aplicacion
     public partial class FrmAgregarProducto : Form
     {
         internal ListaProductos lista;
-        public System.Windows.Forms.Button buttonOcultar;
 
         public FrmAgregarProducto(ListaProductos lista)
         {

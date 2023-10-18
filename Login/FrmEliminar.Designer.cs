@@ -40,7 +40,7 @@
             groupBox1.Controls.Add(lsBProductos);
             groupBox1.Location = new Point(12, 46);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(951, 356);
+            groupBox1.Size = new Size(1150, 356);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Seleccionar un producto";
@@ -51,7 +51,7 @@
             lsBProductos.ItemHeight = 15;
             lsBProductos.Location = new Point(22, 22);
             lsBProductos.Name = "lsBProductos";
-            lsBProductos.Size = new Size(912, 319);
+            lsBProductos.Size = new Size(1109, 319);
             lsBProductos.TabIndex = 0;
             // 
             // btnEliminar
@@ -59,7 +59,7 @@
             btnEliminar.BackColor = Color.Red;
             btnEliminar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnEliminar.ForeColor = SystemColors.HighlightText;
-            btnEliminar.Location = new Point(425, 408);
+            btnEliminar.Location = new Point(517, 408);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(106, 41);
             btnEliminar.TabIndex = 1;
@@ -82,12 +82,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(975, 461);
+            ClientSize = new Size(1174, 461);
             Controls.Add(button1);
             Controls.Add(btnEliminar);
             Controls.Add(groupBox1);
             Name = "FrmEliminar";
-            Text = "FrmEliminarcs";
+            Text = "Eliminar producto";
             Load += FrmEliminarcs_Load;
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);

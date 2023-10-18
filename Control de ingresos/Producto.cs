@@ -10,7 +10,7 @@ namespace Control_de_ingresos
     [Serializable]
     [XmlInclude(typeof(Gaseosa))]
     [XmlInclude(typeof(Arroz))]
-    [XmlInclude(typeof(Salchicha))]
+    [XmlInclude(typeof(GaseosaPorMayor))]
     public abstract class Producto
     {
         private string tipo;

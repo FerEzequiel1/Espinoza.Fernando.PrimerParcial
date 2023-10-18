@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace Control_de_ingresos
 {
+    /// <summary>
+    /// Clase hija de Producto. Comparte sus mismas caracteristicas y métodos agregando los propios 
+    /// para completar la clase
+    /// </summary>
     public class Gaseosa:Producto
     {
+
         private float mll;
         private string sabor;
 
@@ -35,7 +40,13 @@ namespace Control_de_ingresos
         public float Mll { get => mll; set => mll = value; }
         public string Sabor { get => sabor; set => sabor = value; }
 
-
+        /// <summary>
+        /// Sobrecarga del metodo Mostrar(),llama al metodo Mostrar()Padre para luego concatenarle mediante
+        /// un StringBuilder datos de la clase propia
+        /// </summary>
+        /// <returns>
+        /// Información detallada del producto
+        /// </returns>
         protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -50,6 +61,9 @@ namespace Control_de_ingresos
         {
             return this.Mostrar();
         }
+        /// <summary>
+        /// Ajuste de precio segun si es o no de sabor Tónica
+        /// </summary>
         internal override void AjustarPrecio()
         {
             if(sabor == "Tónica")
@@ -69,6 +83,13 @@ namespace Control_de_ingresos
 
         }
 
+        /// <summary>
+        /// Sobrecarga del metodo == para generar un criterio de comparación propio entre dos 
+        /// objetos de la misma clase
+        /// </summary>
+        /// <returns>
+        /// false o true dependiendo del resultado de la comparación
+        /// </returns>
         public static bool operator ==(Gaseosa a, Gaseosa b)
         {
             return a.Sabor == b.Sabor && a.Mll == b.Mll && a.Tipo == b.Tipo;
@@ -78,6 +99,13 @@ namespace Control_de_ingresos
             return !(a == b);
         }
 
+        /// <summary>
+        /// Mediante la sobrecarga + crea un nuevo producto a partir de los dos
+        /// productos brindados usando y combinando sus atributos
+        /// </summary>
+        /// <returns>
+        /// Un producto combinado
+        /// </returns>
         public static Gaseosa operator +(Gaseosa a, Gaseosa b)
         {
 

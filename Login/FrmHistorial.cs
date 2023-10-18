@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Aplicacion
 {
+    /// <summary>
+    /// Este Formulario muestra a todos los usuarios que se logearon en el tiempo
+    /// </summary>
     public partial class FrmHistorial : Form
     {
         public string path;

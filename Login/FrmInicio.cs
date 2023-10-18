@@ -14,6 +14,9 @@ using System.Xml.Serialization;
 
 namespace Aplicacion
 {
+    /// <summary>
+    /// Este formulario va a contener toda la interfaz que el usuario va a ver luego de estar logeado
+    /// </summary>
     public partial class FrmInicio : Form
     {
         internal Usuario usuario;
@@ -23,11 +26,23 @@ namespace Aplicacion
         {
             InitializeComponent();
         }
+        //Se recibe por parametro el usuario que se logea y se guarda en su atributo
         public FrmInicio(Usuario usuario) : this()
         {
             this.usuario = usuario;
         }
 
+        /// <summary>
+        /// 
+        /// Se genera la fecha que se logea el usario.
+        /// Se llama a la funcion UsuariosLogeados para guardar ese usuario en el historial
+        /// y se inicializa el txto del label que contiene la informacion del usuario que se va a mostrar por pantalla
+        /// Adicionalmente se obtiene el path donde guardamos la lista generica pedida para la evaluación mediante el método Path(), y se deserializa
+        /// la lista generica asignandola al atributo listaDeProductos del form con el que se va a trabajar durante todo el CRUD.
+        /// Se llama al método PublicarProductos() para mostrar los productos en un Text Box.
+        /// 
+        /// </summary>
+        
         private void FrmInicio_Load(object sender, EventArgs e)
         {
             DateTime fechaActual = DateTime.Now;
@@ -43,6 +58,12 @@ namespace Aplicacion
 
         }
 
+        /// <summary>
+        /// Opciones para agregar un producto dependiendo del tipo donde le haya clickeado el usuario
+        /// podra añadir un producto a la lista.
+        /// Se abrira un formulario distinto dependiendo de su elección
+        /// </summary>
+       
         private void gaseosaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CrearFormulario("Gaseosa");
@@ -55,6 +76,13 @@ namespace Aplicacion
         {
             CrearFormulario("Gaseosa por mayor");
         }
+
+        /// <summary>
+        /// Se abre la interfaz para eliminar un producto a seleccionar en la lista,
+        /// una vez terminado se reasigna la lista recortada al atributo listaDeProductos del 
+        /// formulario principal para mostras en la intefaz de inicio
+        /// </summary>
+       
         private void eliminarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmEliminar frmEliminar = new FrmEliminar(this.listaDeProductos);
@@ -69,6 +97,10 @@ namespace Aplicacion
             PublicarProductos();
         }
 
+        /// <summary>
+        /// Ordena la lista en el List Box segun el criterio de chekeo 
+        /// </summary>
+        /// 
         private void btnOrdenar_Click(object sender, EventArgs e)
         {
             if (rbCantidad.Checked && rbMayor.Checked)
@@ -92,6 +124,9 @@ namespace Aplicacion
             PublicarProductos();
         }
 
+        /// <summary>
+        /// Muestra todos los elemnetos de la lista en el List Box
+        /// </summary>
         public void PublicarProductos()
         {
             lstProductos.Items.Clear();
@@ -101,6 +136,13 @@ namespace Aplicacion
             }
         }
 
+        /// <summary>
+        /// Crea los formularios de las opciones del menú segun la necesidad del usuario.
+        /// Una vez cerrados se usa el metodo ActualizarLista() para asignarle los cambios que se hicieron
+        /// en la lista al atributo listaDeProductos del formulario de inicio
+        /// 
+        /// </summary>
+        
         public void CrearFormulario(string tipo)
         {
             switch (tipo)
@@ -132,6 +174,10 @@ namespace Aplicacion
 
 
         }
+        /// <summary>
+        /// se asigna los cambios que se hicieron en la lista de los formularios 
+        /// utilizados, al atributo listaDeProductos del formulario de inicio
+        /// </summary>
 
         public void ActualizarLista(FrmAgregarProducto form)
         {
@@ -151,6 +197,10 @@ namespace Aplicacion
             return path;
         }
 
+        /// <summary>
+        /// Se crea y/o añade perfiles que se logeen en un archivo para luego ser visualizados en el historial de logeos
+        /// </summary>
+        /// <param name="perfil"></param>
         private void UsuariosLogeados(Usuario perfil)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -178,6 +228,11 @@ namespace Aplicacion
 
         }
 
+        /// <summary>
+        /// Crea el formulario donde se va a leer el archivo de historial de gente logeada para mostrarlo en un list box
+        /// Se crea el path donde esta la ruta del archivo a leer y se lo pasa por parametro al FrmHistorial para su uso
+        /// </summary>
+       
         private void historialDePersonasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -188,7 +243,9 @@ namespace Aplicacion
             frmHistorial.Show();
 
         }
-
+        /// <summary>
+        /// Se asegura de que el usario quiera verdaderamente irse de la apliacion y si no guardo los cambios los pueda guardar
+        /// </summary>
         private void FrmInicio_FormClosing(object sender, FormClosingEventArgs e)
         {
 
@@ -209,6 +266,10 @@ namespace Aplicacion
             }
 
         }
+
+        /// <summary>
+        /// Guarda la listaDeProductos en una ruta a elección del usuario
+        /// </summary>
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -232,6 +293,10 @@ namespace Aplicacion
             }
         }
 
+        /// <summary>
+        /// Carga una listaDeProductos de una ruta a elección del usuario
+        /// asignandola al atributo listaDeProductos del formulario principal
+        /// </summary>
         private void btnCargar_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();

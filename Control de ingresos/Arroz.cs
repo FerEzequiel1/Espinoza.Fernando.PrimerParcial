@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace Control_de_ingresos
 {
+    /// <summary>
+    /// Clase hija de Producto. Comparte sus mismas caracteristicas y métodos agregando los propios 
+    /// para completar la clase
+    /// </summary>
     public class Arroz:Producto
     {
         private string origen;
@@ -38,6 +42,13 @@ namespace Control_de_ingresos
         public string Origen { get => origen; set => origen = value; }
         public string Porveedor { get => porveedor; set => porveedor = value; }
 
+        /// <summary>
+        /// Sobrecarga del metodo Mostrar(),llama al metodo Mostrar()Padre para luego concatenarle mediante
+        /// un StringBuilder datos de la clase propia
+        /// </summary>
+        /// <returns>
+        /// Información detallada del producto
+        /// </returns>
         protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -53,6 +64,9 @@ namespace Control_de_ingresos
             return this.Mostrar();
         }
 
+        /// <summary>
+        /// Ajuste de precio segun si es o no de marca Gallo
+        /// </summary>
         internal override void AjustarPrecio() {
             if (Marca == (EMarca)Enum.Parse(typeof(EMarca), "Gallo"))
             {
@@ -71,6 +85,13 @@ namespace Control_de_ingresos
 
         }
 
+        /// <summary>
+        /// Sobrecarga del metodo == para generar un criterio de comparación propio entre dos 
+        /// objetos de la misma clase
+        /// </summary>
+        /// <returns>
+        /// false o true dependiendo del resultado de la comparación
+        /// </returns>
         public static bool operator ==(Arroz a, Arroz b)
         {
             return a.Marca == b.Marca && a.Origen == b.Origen && a.Tipo == b.Tipo;
@@ -80,6 +101,13 @@ namespace Control_de_ingresos
             return !(a == b);
         }
 
+        /// <summary>
+        /// Mediante la sobrecarga + crea un nuevo producto a partir de los dos
+        /// productos brindados usando y combinando sus atributos
+        /// </summary>
+        /// <returns>
+        /// Un producto combinado
+        /// </returns>
         public static Arroz operator +(Arroz a, Arroz b)
         {
             return new Arroz("Combo Bolsa de Arroz", "Mezcla", (EMarca)Enum.Parse(typeof(EMarca), "Trapal"), a.Cantidad + b.Cantidad, (a.Precio + b.Precio) * 0.7f, "Argentina", "Trapal");

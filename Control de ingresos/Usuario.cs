@@ -8,6 +8,11 @@ namespace Control_de_ingresos
 {
     public class Usuario
     {
+        /// <summary>
+        /// Con esta clase vamos a poder inicializar y poder capturar los datos del archivo json de login
+        /// </summary>
+        
+        
         public string nombre {  get; set; }
         public string apellido { get; set; }
         public int legajo { get; set; }

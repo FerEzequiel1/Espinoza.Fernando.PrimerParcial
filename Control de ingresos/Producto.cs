@@ -11,8 +11,16 @@ namespace Control_de_ingresos
     [XmlInclude(typeof(Gaseosa))]
     [XmlInclude(typeof(Arroz))]
     [XmlInclude(typeof(GaseosaPorMayor))]
+
+    
     public abstract class Producto
     {
+        /// <summary>
+        /// 
+        /// Clase abstracta producto va a inicializar todos los productos que se instancien de manera de que funcione como plantilla para las demas clases.
+        /// Tiene sus propios metodos que va  acompartir con sus clases hijas para la reutilización de codigo.
+        /// 
+        /// </summary>
         private string tipo;
         private float precio;
         private string nombre;
@@ -54,6 +62,15 @@ namespace Control_de_ingresos
         public string Tipo { get => tipo; set => tipo = value; }
         public EMarca Marca { get => marca; set => marca = value; }
 
+        /// <summary>
+        /// 
+        /// Metodo virtual el cual se va a sobreescribir.
+        /// </summary>
+        /// 
+        /// <returns>
+        /// Cadena de string concatenando caracteristicas del producto para poder mostrar en pantalla. Cada herencia va a añadir
+        /// sus propios atributos
+        /// </returns>
         protected virtual string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -79,8 +96,19 @@ namespace Control_de_ingresos
 
         }
 
+        /// <summary>
+        /// Metodo abstracto a aplicar en sus clases hijas para aumentar o disminuir el precio
+        /// segun la funcionalidad que se le de.
+        /// </summary>
         internal abstract void AjustarPrecio();
 
+        /// <summary>
+        /// Sobrecarga del metodo == para generar un criterio de comparación propio entre dos 
+        /// objetos de la misma clase
+        /// </summary>
+        /// <returns>
+        /// false o true dependiendo del resultado de la comparación
+        /// </returns>
         public static bool operator == (Producto a, Producto b)
         {
             return a.Tipo == b.Tipo && a.Nombre == b.Nombre && a.Marca == b.Marca;
@@ -89,11 +117,17 @@ namespace Control_de_ingresos
         {
             return !(a == b);
         }
-
+       
         public  double PrecioTotal()
         {
             return (int)Precio * Cantidad;
         }
+
+
+        /// <summary>
+        /// Metodo para serializar la lista de productos en el ámbito local puestas por el programa a cumplir con la consiga del parcial
+        /// Recibe como parametro la lista a serializar y el path de donde va a ser ubicada
+        /// </summary>
 
         public static void Serializar(ListaProductos lista, string path)
         {
@@ -115,6 +149,13 @@ namespace Control_de_ingresos
             }
         }
 
+        /// <summary>
+        /// Recibe un path del archivo a deserializar
+        /// </summary>
+        /// <returns>
+        /// Devuelve una listaProductos para su tratamiento. Esto es con fin de deserializar una lista
+        /// previamente guardada en el programa para cumplir con la consigna del parcial
+        /// </returns>
         public static ListaProductos Deserializar(string path)
         {
             ListaProductos lista;

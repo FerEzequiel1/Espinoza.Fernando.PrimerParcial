@@ -8,12 +8,20 @@ using System.Threading.Tasks;
 
 namespace Control_de_ingresos
 {
+    /// <summary>
+    /// Clase hija de Producto. Comparte sus mismas caracteristicas y métodos agregando los propios 
+    /// para completar la clase
+    /// </summary>
     public class GaseosaPorMayor:Gaseosa
     {
         private int unidades;
         private string artesanal;
 
-
+        /// <summary>
+        /// Se tiene diversos constructores a respetar por consigna de examen los cuales llaman a sus sobrecargas y al final a su
+        /// constructor padre
+        /// </summary>
+       
         public GaseosaPorMayor(string nombre, string tipo, EMarca marca, int cantidad, float precio,float mililitros,string sabor, int unidades, string artesanal) : base(nombre, tipo, marca, cantidad, precio,mililitros,sabor)
         {
             this.unidades = unidades;
@@ -37,7 +45,13 @@ namespace Control_de_ingresos
         public int Unidades { get => unidades; set => unidades = value; }
         public string Artesanal { get => artesanal; set => artesanal = value; }
 
-
+        /// <summary>
+        /// Sobrecarga del metodo Mostrar(),llama al metodo Mostrar()Padre para luego concatenarle mediante
+        /// un StringBuilder datos de la clase propia
+        /// </summary>
+        /// <returns>
+        /// Información detallada del producto
+        /// </returns>
         protected override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
@@ -52,6 +66,9 @@ namespace Control_de_ingresos
         {
             return this.Mostrar();
         }
+        /// <summary>
+        /// Ajuste de precio segun si es o no artesanal
+        /// </summary>
         internal override void AjustarPrecio()
         {
             if(Artesanal == "No")
@@ -70,6 +87,13 @@ namespace Control_de_ingresos
 
         }
 
+        /// <summary>
+        /// Sobrecarga del metodo == para generar un criterio de comparación propio entre dos 
+        /// objetos de la misma clase
+        /// </summary>
+        /// <returns>
+        /// false o true dependiendo del resultado de la comparación
+        /// </returns>
         public static bool operator ==(GaseosaPorMayor a, GaseosaPorMayor b)
         {
             return a.Artesanal == b.Artesanal && a.Unidades == b.Unidades && a.Tipo == b.Tipo;
@@ -79,6 +103,13 @@ namespace Control_de_ingresos
             return !(a == b);
         }
 
+        /// <summary>
+        /// Mediante la sobrecarga + crea un nuevo producto a partir de los dos
+        /// productos brindados usando y combinando sus atributos
+        /// </summary>
+        /// <returns>
+        /// Un producto combinado
+        /// </returns>
         public static GaseosaPorMayor operator +(GaseosaPorMayor a, GaseosaPorMayor b)
         {
 

@@ -11,7 +11,10 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Aplicacion
-{
+{   /// <summary>
+    /// Formlario base para todos los formularios que agreguen productos a la listaDeProductos del formulario principal
+    /// Contiene sus propios metodos que los demas van a heredar
+    /// </summary>
     public partial class FrmAgregarProducto : Form
     {
         internal ListaProductos lista;
@@ -47,6 +50,13 @@ namespace Aplicacion
             this.Close();
         }
 
+        /// <summary>
+        /// Verifica que la casilla de Marcas sea seleccionada por alguna opcion brindada.
+        /// </summary>
+        /// <returns>
+        /// La eleccion elegida,caso contrario devuelve un "no" y se visualiza eun MessageBox de los errores que tuvo
+        /// </returns>
+
         protected string VerificarMarca()
         {
             string rta = "no";
@@ -67,6 +77,12 @@ namespace Aplicacion
 
             return rta;
         }
+        /// <summary>
+        /// Verifica si se completaron los Text Box de txtNombre y txtTipo
+        /// </summary>
+        /// <returns>
+        /// Un Bool con su respuesta y en caso que sea false muestra un MessageBox explicando su error.
+        /// </returns>
         protected bool VerificarNombreTipo()
         {
             bool rta = false;
@@ -80,8 +96,6 @@ namespace Aplicacion
                 MessageBox.Show($"Debe completar el nombre y/o tipo", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
 
-
-
             return rta;
         }
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -89,6 +103,9 @@ namespace Aplicacion
             LimpiarCampos();
         }
 
+        /// <summary>
+        /// Limpia todos los controles del formulario.
+        /// </summary>
         protected void LimpiarCampos()
         {
 

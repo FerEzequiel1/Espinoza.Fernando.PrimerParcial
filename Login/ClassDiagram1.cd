@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Aplicacion.Properties.Resources" Collapsed="true">
-    <Position X="15.75" Y="2.25" Width="1.5" />
+  <Class Name="Aplicacion.Properties.Resources">
+    <Position X="13.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAhEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
@@ -20,8 +20,8 @@
       <FileName>FrmAgregarProducto.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Aplicacion.FrmEliminar" Collapsed="true">
-    <Position X="12.25" Y="1.25" Width="1.5" />
+  <Class Name="Aplicacion.FrmEliminar">
+    <Position X="12" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACQAABBAAACAAAACCAAIAAAAAnAAAAAAAAA=</HashCode>
       <FileName>FrmEliminar.cs</FileName>
@@ -41,36 +41,36 @@
       <FileName>FrmGaseosaPorMayor.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Aplicacion.FrmHistorial" Collapsed="true">
-    <Position X="14" Y="1.25" Width="1.5" />
+  <Class Name="Aplicacion.FrmHistorial">
+    <Position X="13.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAgBQAAACCAAECAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FrmHistorial.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Aplicacion.FrmInicio" Collapsed="true">
-    <Position X="15.75" Y="1.25" Width="1.5" />
+  <Class Name="Aplicacion.FrmInicio">
+    <Position X="15.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BQAAAQgAAqAADhoRAgCCAEETAQAASAwCAiIBBAgUAAg=</HashCode>
       <FileName>FrmInicio.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Login.FrmVerificacion" Collapsed="true">
-    <Position X="12.25" Y="2.25" Width="1.5" />
+  <Class Name="Login.FrmVerificacion">
+    <Position X="12" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAACAAAZEAAACAAAACAABAAGQIAAAAEAAgAAA=</HashCode>
       <FileName>FrmVerificacion.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Login.Program" Collapsed="true">
-    <Position X="14" Y="2.25" Width="1.5" />
+  <Class Name="Login.Program">
+    <Position X="17.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Control_de_ingresos.Usuario" Collapsed="true">
-    <Position X="12.25" Y="3.25" Width="1.5" />
+  <Class Name="Control_de_ingresos.Usuario">
+    <Position X="13.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAQBAACEAAAAAAAAAAQAAACAAAAQAAAAAAA=</HashCode>
       <FileName>Usuario.cs</FileName>

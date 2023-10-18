@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Aplicacion
 {
+    /// <summary>
+    /// Formulario donde se va a completar los datos pedidos para poder crear un producto tipo GaseosaPorMayor
+    /// </summary>
     public partial class FrmGaseosaPorMayor : FrmAgregarProducto
     {
         public FrmGaseosaPorMayor(ListaProductos lista) : base(lista)
@@ -20,14 +23,19 @@ namespace Aplicacion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            //Se verifica a travez de los métodos si cumplen con los tipos de datos correctos para la creación del producto
+
             string marca = base.VerificarMarca();
-            bool chancho = VerificarArtesanal();
+            bool artesanal = VerificarArtesanal();
             bool nombre = base.VerificarNombreTipo();
 
-            if (marca != "no" && chancho && nombre)
+            if (marca != "no" && artesanal && nombre)
             {
 
-                GaseosaPorMayor gaseosaPorMayor = new GaseosaPorMayor(base.txtNombre.Text, base.txtTipo.Text, (EMarca)Enum.Parse(typeof(EMarca), marca), (int)base.nUDCantidad.Value, (float)base.nUDPrecio.Value, (float)this.nUDMLL.Value, this.txtSabor.Text, (int)this.nUDUnidades.Value);
+                GaseosaPorMayor gaseosaPorMayor = new GaseosaPorMayor(base.txtNombre.Text, base.txtTipo.Text, (EMarca)Enum.Parse(typeof(EMarca), marca), (int)base.nUDCantidad.Value, (float)base.nUDPrecio.Value, (float)this.nUDMLL.Value, this.txtSabor.Text, (int)this.nUDUnidades.Value,this.txtArtesanal.Text);
+
+                //Se verifica que el producto ingresado no exita en la listaDeProductos del formulario principal
+                //Si esta no se agrega y se informa.Caso contrario lo agrega y se recetean los campos del formulario
 
                 if (base.Comparar(gaseosaPorMayor))
                 {
@@ -37,14 +45,20 @@ namespace Aplicacion
                 {
                     base.agregar(gaseosaPorMayor);
                     base.LimpiarCampos();
+                    MessageBox.Show($"El producto ah sido ingresado con éxito","ADMIRACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }
+        /// <summary>
+        /// Se verifica si los campos txtArtesanal y txtSabor fueron completados y no estan vacios y/o no reciben lo que piden.
+        /// Si no reciben lo que piden lo informa por MessageBox
+        /// </summary>
+       
         private bool VerificarArtesanal()
         {
             bool valor = false;
 
-            if (this.txtArtesanal.Text == "Si" || this.txtArtesanal.Text == "No")
+            if ((this.txtArtesanal.Text == "Si" || this.txtArtesanal.Text == "No") && this.txtSabor.Text != null)
             {
                 valor = true;
             }

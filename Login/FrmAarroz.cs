@@ -41,7 +41,7 @@ namespace Aplicacion
                 {
                     base.agregar(arroz);
                     base.LimpiarCampos();
-                    MessageBox.Show($"El producto ah sido ingresado con éxito", "ADMIRACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show($"El producto ah sido ingresado con éxito", "Producto Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

@@ -63,9 +63,9 @@
             groupBox1.Controls.Add(btnGuardar);
             groupBox1.Controls.Add(groupBox2);
             groupBox1.Controls.Add(lstProductos);
-            groupBox1.Location = new Point(35, 49);
+            groupBox1.Location = new Point(24, 49);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1101, 416);
+            groupBox1.Size = new Size(1124, 416);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Productos";
@@ -73,7 +73,7 @@
             // btnCargar
             // 
             btnCargar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCargar.Location = new Point(727, 316);
+            btnCargar.Location = new Point(769, 312);
             btnCargar.Name = "btnCargar";
             btnCargar.Size = new Size(116, 57);
             btnCargar.TabIndex = 3;
@@ -84,7 +84,7 @@
             // btnGuardar
             // 
             btnGuardar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnGuardar.Location = new Point(903, 316);
+            btnGuardar.Location = new Point(946, 312);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(116, 57);
             btnGuardar.TabIndex = 2;
@@ -186,14 +186,14 @@
             lstProductos.ItemHeight = 15;
             lstProductos.Location = new Point(15, 22);
             lstProductos.Name = "lstProductos";
-            lstProductos.Size = new Size(1053, 274);
+            lstProductos.Size = new Size(1093, 274);
             lstProductos.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(367, -3);
+            label1.Location = new Point(533, -3);
             label1.MaximumSize = new Size(0, 28);
             label1.MinimumSize = new Size(0, 28);
             label1.Name = "label1";
@@ -205,7 +205,7 @@
             // 
             lblUsuario.AutoSize = true;
             lblUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblUsuario.Location = new Point(742, 4);
+            lblUsuario.Location = new Point(842, 0);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(52, 21);
             lblUsuario.TabIndex = 6;

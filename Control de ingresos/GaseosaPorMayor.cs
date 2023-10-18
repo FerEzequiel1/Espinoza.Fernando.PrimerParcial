@@ -82,7 +82,7 @@ namespace Control_de_ingresos
         public static GaseosaPorMayor operator +(GaseosaPorMayor a, GaseosaPorMayor b)
         {
 
-            return new GaseosaPorMayor("Combo Salchica", "Mezcla", (EMarca)Enum.Parse(typeof(EMarca), "Trapal"), a.Cantidad + b.Cantidad, (a.Precio + b.Precio) * 0.7f, a.Unidades, "Si");
+            return new GaseosaPorMayor("GaseosaX", "Mezcla", (EMarca)Enum.Parse(typeof(EMarca), "Trapal"), a.Cantidad + b.Cantidad, (a.Precio + b.Precio) * 0.7f,500f,"Uva",a.Unidades+b.Unidades,"No");
 
         }
 

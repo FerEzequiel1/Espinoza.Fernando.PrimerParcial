@@ -92,7 +92,7 @@ namespace Control_de_ingresos
 
         public  double PrecioTotal()
         {
-            return Precio * Cantidad;
+            return (int)Precio * Cantidad;
         }
 
         public static void Serializar(ListaProductos lista, string path)

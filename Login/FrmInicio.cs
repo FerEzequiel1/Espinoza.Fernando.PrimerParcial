@@ -44,42 +44,34 @@ namespace Aplicacion
         private void gaseosaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            FrmGaseosa frmGaseosa = new FrmGaseosa(this.listaDeProductos);
-            frmGaseosa.StartPosition = FormStartPosition.CenterScreen;
-            frmGaseosa.ShowDialog();
-
-            if (frmGaseosa.DialogResult == DialogResult.OK)
-            {
-                this.listaDeProductos = frmGaseosa.lista;
-            }
-            PublicarProductos();
+            
+            CrearFormulario("Gaseosa");
 
         }
         private void arrozToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmAarroz frmAarroz = new FrmAarroz(this.listaDeProductos);
-            frmAarroz.StartPosition = FormStartPosition.CenterScreen;
-            frmAarroz.ShowDialog();
-
-            if (frmAarroz.DialogResult == DialogResult.OK)
-            {
-                this.listaDeProductos = frmAarroz.lista;
-            }
-            PublicarProductos();
+            
+            CrearFormulario("Aarroz");
 
         }
         private void salchichaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmSalchicha frmSalchica = new FrmSalchicha(this.listaDeProductos);
-            frmSalchica.StartPosition = FormStartPosition.CenterScreen;
-            frmSalchica.ShowDialog();
+           
+            CrearFormulario("Salchica");
 
-            if (frmSalchica.DialogResult == DialogResult.OK)
+        }
+        private void eliminarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEliminar frmEliminar = new FrmEliminar(this.listaDeProductos);
+            frmEliminar.StartPosition = FormStartPosition.CenterScreen;
+            frmEliminar.ShowDialog();
+
+            if (frmEliminar.DialogResult == DialogResult.OK)
             {
-                this.listaDeProductos = frmSalchica.lista;
+                this.listaDeProductos = frmEliminar.lista;
             }
-            PublicarProductos();
 
+            PublicarProductos();
         }
 
         private void btnOrdenar_Click(object sender, EventArgs e)
@@ -102,7 +94,6 @@ namespace Aplicacion
                 listaDeProductos.OrdenPorPrecioCantidad("Ascendente", "Precio total");
             }
 
-
             PublicarProductos();
         }
 
@@ -112,8 +103,49 @@ namespace Aplicacion
             foreach (Producto p in this.listaDeProductos.ListaDeProductos)
             {
                 lstProductos.Items.Add(p);
-                lstProductos.Items.Add("\n");
             }
+        }
+
+        public void CrearFormulario(string tipo)
+        {
+            switch (tipo)
+            {
+                case "Aarroz":
+
+                    FrmAarroz frmAarroz = new FrmAarroz(this.listaDeProductos);
+                    frmAarroz.StartPosition = FormStartPosition.CenterScreen;
+                    frmAarroz.ShowDialog();
+                    ActualizarLista(frmAarroz);
+                    break;
+
+                case "Gaseosa":
+
+                    FrmGaseosa frmGaseosa = new FrmGaseosa(this.listaDeProductos);
+                    frmGaseosa.StartPosition = FormStartPosition.CenterScreen;
+                    frmGaseosa.ShowDialog();
+                    ActualizarLista(frmGaseosa);
+                    break;
+
+                case "Salchica":
+
+                    FrmSalchicha frmSalchica = new FrmSalchicha(this.listaDeProductos);
+                    frmSalchica.StartPosition = FormStartPosition.CenterScreen;
+                    frmSalchica.ShowDialog();
+                    ActualizarLista(frmSalchica);
+                    break;
+            }
+
+           
+        }
+
+        public void ActualizarLista(FrmAgregarProducto form)
+        {
+            if (form.DialogResult == DialogResult.OK)
+            {
+                this.listaDeProductos = form.lista;
+            }
+            PublicarProductos();
+
         }
 
     }

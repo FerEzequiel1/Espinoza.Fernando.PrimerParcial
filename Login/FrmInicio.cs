@@ -45,6 +45,8 @@ namespace Aplicacion
         
         private void FrmInicio_Load(object sender, EventArgs e)
         {
+            GenerarListas();
+
             DateTime fechaActual = DateTime.Now;
             this.lblUsuario.Text = $"{this.usuario.ToString()} {fechaActual.Day}/{fechaActual.Month}/{fechaActual.Year}";
 
@@ -318,6 +320,38 @@ namespace Aplicacion
                 }
 
             }
+        }
+
+        private void GenerarListas()
+        {
+            Arroz arroz1 = new Arroz("Arroz blanco", "Arroz", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 3, 500f, "Argentina", "Pablo");
+            Arroz arroz2 = new Arroz("Arroz Integral", "Arroz", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 5, 600f, "Argentina", "Chacra Gonzalez");
+            Arroz comboArroz = arroz1 + arroz2;
+
+            Gaseosa gaseosa1 = new Gaseosa("Seven up", "Gaseosa", (EMarca)Enum.Parse(typeof(EMarca), "SevenUp"), 3, 500f, 3f, "Lima");
+            Gaseosa gaseosa2 = new Gaseosa("Pepsi", "Gaseosa", (EMarca)Enum.Parse(typeof(EMarca), "Pepsi"), 3, 500f, 3f, "Cola");
+
+            GaseosaPorMayor gaseosaPorMayor1 = new GaseosaPorMayor("Trini", "Gaseosa Mayorista", (EMarca)Enum.Parse(typeof(EMarca), "Vienissima"), 4, 300f, 500f, "Uva", 1000, "Si");
+            GaseosaPorMayor gaseosaPorMayor2 = new GaseosaPorMayor("Don Antonio", "Gaseosa Mayorista", (EMarca)Enum.Parse(typeof(EMarca), "Swift"), 4, 150f, 500f, "Naranja", 500, "No");
+            GaseosaPorMayor gaseosaPorMayor3 = gaseosaPorMayor1 + gaseosaPorMayor2;
+
+            List<Producto> productos = new List<Producto>();
+
+            productos.Add(arroz1);
+            productos.Add(arroz2);
+            productos.Add(comboArroz);
+            productos.Add(gaseosa1);
+            productos.Add(gaseosa2);
+            productos.Add(gaseosaPorMayor1);
+            productos.Add(gaseosaPorMayor2);
+            productos.Add(gaseosaPorMayor3);
+
+            ListaProductos listaDeProductos = new(productos);
+
+
+            string path = Path();
+
+            Producto.Serializar(listaDeProductos, path);
         }
     }
 }

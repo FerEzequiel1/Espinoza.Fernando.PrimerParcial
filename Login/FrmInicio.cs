@@ -33,7 +33,7 @@ namespace Aplicacion
         }
 
         /// <summary>
-        /// 
+        /// Se genera una lista generica que se guarda de forma local en una serializacion.
         /// Se genera la fecha que se logea el usario.
         /// Se llama a la funcion UsuariosLogeados para guardar ese usuario en el historial
         /// y se inicializa el txto del label que contiene la informacion del usuario que se va a mostrar por pantalla
@@ -322,6 +322,10 @@ namespace Aplicacion
             }
         }
 
+        /// <summary>
+        /// Se guarda en un un archivo HML una listaDeProductos para que quede en forma local y poderla levantar desdel este Formulario de inicio en el momento del Load,
+        /// Se usa todas las clases tipo producto para tener un variado de productos y se serializa con la instancia de clase Producto.Serializar.
+        /// </summary>
         private void GenerarListas()
         {
             Arroz arroz1 = new Arroz("Arroz blanco", "Arroz", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 3, 500f, "Argentina", "Pablo");

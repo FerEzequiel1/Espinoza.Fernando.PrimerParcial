@@ -65,12 +65,23 @@ namespace Control_de_ingresos
         }
 
         /// <summary>
-        /// Ajuste de precio segun si es o no de marca Gallo
+        /// Ajuste de precio segun si es o no de marca Gallo o su sobrecarga swift con un valor mayor
         /// </summary>
         internal override void AjustarPrecio() {
             if (Marca == (EMarca)Enum.Parse(typeof(EMarca), "Gallo"))
             {
                 Precio = Precio * 1.3f;
+            }
+            else
+            {
+                AjustarPrecio(3f);
+            }
+        }
+        internal void AjustarPrecio(float aumento)
+        {
+            if (Marca == (EMarca)Enum.Parse(typeof(EMarca), "Swift"))
+            {
+                Precio = Precio * aumento;
             }
         }
 

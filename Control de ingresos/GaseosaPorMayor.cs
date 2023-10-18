@@ -75,6 +75,17 @@ namespace Control_de_ingresos
             {
                 Precio = Precio * 0.9f;
             }
+            else
+            {
+                AjustarPrecio(3f);
+            }
+        }
+        internal void AjustarPrecio(float aumento)
+        {
+            if (Artesanal == "Si")
+            {
+                Precio = Precio * aumento;
+            }
         }
         public override bool Equals(object? obj)
         {

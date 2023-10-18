@@ -62,13 +62,25 @@ namespace Control_de_ingresos
             return this.Mostrar();
         }
         /// <summary>
-        /// Ajuste de precio segun si es o no de sabor Tónica
+        /// Ajuste de precio segun si es o no de sabor Tónica o su sobrecarga sabor Tomate
         /// </summary>
         internal override void AjustarPrecio()
         {
             if(sabor == "Tónica")
             {
                 Precio = Precio * 0.8f;
+            }
+            else
+            {
+                AjustarPrecio(2f);
+            }
+        }
+
+        internal void AjustarPrecio( float aumento)
+        {
+            if (sabor == "Tomate")
+            {
+                Precio = Precio * aumento;
             }
         }
 

@@ -179,7 +179,7 @@
             // 
             lblUsuario.AutoSize = true;
             lblUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblUsuario.Location = new Point(715, 0);
+            lblUsuario.Location = new Point(636, 0);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(52, 21);
             lblUsuario.TabIndex = 6;
@@ -244,6 +244,7 @@
             historialDePersonasToolStripMenuItem.Name = "historialDePersonasToolStripMenuItem";
             historialDePersonasToolStripMenuItem.Size = new Size(226, 26);
             historialDePersonasToolStripMenuItem.Text = "Historial de personas";
+            historialDePersonasToolStripMenuItem.Click += historialDePersonasToolStripMenuItem_Click;
             // 
             // FrmInicio
             // 
@@ -257,6 +258,7 @@
             IsMdiContainer = true;
             Name = "FrmInicio";
             Text = "Form1";
+            FormClosed += FrmInicio_FormClosed;
             Load += FrmInicio_Load;
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);

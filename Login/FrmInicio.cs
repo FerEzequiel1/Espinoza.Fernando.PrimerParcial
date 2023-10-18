@@ -28,37 +28,30 @@ namespace Aplicacion
 
         private void FrmInicio_Load(object sender, EventArgs e)
         {
-            this.lblUsuario.Text = this.usuario.ToString();
+            DateTime fechaActual = DateTime.Now;
+            this.lblUsuario.Text = $"{this.usuario.ToString()} {fechaActual.Day}/{fechaActual.Month}/{fechaActual.Year}";
 
+            UsuariosLogeados(this.usuario);
 
-
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            path += @"\Mayorista Trapal";
-
+            string path = Path();
             this.listaDeProductos = Producto.Deserializar(path);
             PublicarProductos();
+
 
 
         }
 
         private void gaseosaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            
             CrearFormulario("Gaseosa");
-
         }
         private void arrozToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
             CrearFormulario("Aarroz");
-
         }
         private void salchichaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
             CrearFormulario("Salchica");
-
         }
         private void eliminarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -135,7 +128,7 @@ namespace Aplicacion
                     break;
             }
 
-           
+
         }
 
         public void ActualizarLista(FrmAgregarProducto form)
@@ -148,5 +141,58 @@ namespace Aplicacion
 
         }
 
+        private void FrmInicio_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            string path = Path();
+
+            Producto.Serializar(this.listaDeProductos, path);
+        }
+
+        private string Path()
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            path += @"\Mayorista Trapal";
+
+            return path;
+        }
+
+        private void UsuariosLogeados(Usuario perfil)
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            path += @"\registro.log";
+
+            try
+            {
+                // Abre un archivo de registro para escribir (crea uno nuevo o agrega al existente)
+                using (StreamWriter logWriter = new StreamWriter(path, true))
+                {
+                    // Obtiene la fecha y hora actual
+                    DateTime fechaHoraActual = DateTime.Now;
+
+                    // Mensaje de registro a escribir en el archivo
+                    string mensajeRegistro = $"Nombre:{perfil.nombre} Apellido:{perfil.apellido} Legajo:{perfil.legajo}  Dia de ingreso:{fechaHoraActual:yyyy-MM-dd HH:mm:ss}";
+
+                    // Escribe el mensaje de registro en el archivo
+                    logWriter.WriteLine(mensajeRegistro);
+                }
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine("Error al escribir en el archivo de registro: " + ex.Message);
+            }
+
+        }
+
+        private void historialDePersonasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            path += @"\registro.log";
+
+            FrmHistorial frmHistorial = new FrmHistorial(path);
+            frmHistorial.StartPosition = FormStartPosition.CenterScreen;
+            frmHistorial.Show();
+            
+        }
     }
 }

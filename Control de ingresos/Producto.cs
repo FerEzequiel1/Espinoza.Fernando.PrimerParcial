@@ -142,10 +142,10 @@ namespace Control_de_ingresos
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                Console.WriteLine($"Ocurrió un error de tipo {ex} al serializar los datos. Por favor, contacta al soporte.");
             }
         }
 
@@ -169,11 +169,13 @@ namespace Control_de_ingresos
                     
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                Console.WriteLine($"Ocurrió un error de tipo {ex} al deserializar los datos. Por favor, contacta al soporte.");
+                lista = null;
             }
+
 
             return lista;
         }

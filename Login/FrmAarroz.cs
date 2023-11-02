@@ -16,6 +16,24 @@ namespace Aplicacion
         /// <summary>
         /// Formulario donde se va a completar los datos pedidos para poder crear un producto tipo Aarroz
         /// </summary>
+        /// 
+        string nombre;
+        string tipo;
+
+        public FrmAarroz(ListaProductos lista, Arroz producto) : this(lista)
+        {
+            int indiceMarca = Array.IndexOf(Enum.GetValues(typeof(EMarca)), producto.Marca);
+
+            
+            this.txtNombre.Text = producto.Nombre;
+            this.txtTipo.Text = producto.Tipo;
+            this.cmbMarca.SelectedIndex = indiceMarca;
+            this.nUDCantidad.Value = producto.Cantidad;
+            this.nUDPrecio.Value = (decimal)producto.Precio;
+            this.txtOrigen.Text = producto.Origen;
+            this.txtProveedor.Text = producto.Porveedor;
+            
+        }
         public FrmAarroz(ListaProductos lista) : base(lista)
         {
             InitializeComponent();

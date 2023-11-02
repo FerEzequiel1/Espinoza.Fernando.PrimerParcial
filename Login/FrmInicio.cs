@@ -42,7 +42,7 @@ namespace Aplicacion
         /// Se llama al método PublicarProductos() para mostrar los productos en un Text Box.
         /// 
         /// </summary>
-        
+
         private void FrmInicio_Load(object sender, EventArgs e)
         {
             GenerarListas();
@@ -65,7 +65,7 @@ namespace Aplicacion
         /// podra añadir un producto a la lista.
         /// Se abrira un formulario distinto dependiendo de su elección
         /// </summary>
-       
+
         private void gaseosaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CrearFormulario("Gaseosa");
@@ -84,7 +84,7 @@ namespace Aplicacion
         /// una vez terminado se reasigna la lista recortada al atributo listaDeProductos del 
         /// formulario principal para mostras en la intefaz de inicio
         /// </summary>
-       
+
         private void eliminarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmEliminar frmEliminar = new FrmEliminar(this.listaDeProductos);
@@ -144,7 +144,7 @@ namespace Aplicacion
         /// en la lista al atributo listaDeProductos del formulario de inicio
         /// 
         /// </summary>
-        
+
         public void CrearFormulario(string tipo)
         {
             switch (tipo)
@@ -234,7 +234,7 @@ namespace Aplicacion
         /// Crea el formulario donde se va a leer el archivo de historial de gente logeada para mostrarlo en un list box
         /// Se crea el path donde esta la ruta del archivo a leer y se lo pasa por parametro al FrmHistorial para su uso
         /// </summary>
-       
+
         private void historialDePersonasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -356,6 +356,40 @@ namespace Aplicacion
             string path = Path();
 
             Producto.Serializar(listaDeProductos, path);
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int indice = this.lstProductos.SelectedIndex;
+
+            if (indice == -1)
+            {
+                return;
+            }
+
+            Producto producto = this.listaDeProductos.ListaDeProductos[indice];
+
+            if (producto is Arroz)
+            {
+                Arroz productoArroz = producto as Arroz;
+                FrmAarroz frmAarroz = new FrmAarroz(this.listaDeProductos, productoArroz);
+                frmAarroz.StartPosition = FormStartPosition.CenterScreen;
+                frmAarroz.ShowDialog();
+                ActualizarLista(frmAarroz);
+            }
+            else
+            {
+                if(producto is Gaseosa)
+                {
+
+                }
+            }
+
+            //if (frmProducto.DialogResult == DialogResult.OK)
+            //{
+            //    this.listaDeProductos.ListaDeProductos[indice] = producto;
+            //    PublicarProductos();
+            //}
         }
     }
 }

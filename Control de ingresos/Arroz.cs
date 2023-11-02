@@ -17,7 +17,9 @@ namespace Control_de_ingresos
         private string origen;
         private string porveedor;
 
-       
+        public string Origen { get => origen; set => origen = value; }
+        public string Porveedor { get => porveedor; set => porveedor = value; }
+
         public Arroz(string nombre, string tipo, EMarca marca, int cantidad, float precio,string origen,string proveedor) : base(nombre,tipo, marca, cantidad,precio)
         {
             this.origen = origen;
@@ -39,8 +41,7 @@ namespace Control_de_ingresos
         }
 
 
-        public string Origen { get => origen; set => origen = value; }
-        public string Porveedor { get => porveedor; set => porveedor = value; }
+       
 
         /// <summary>
         /// Sobrecarga del metodo Mostrar(),llama al metodo Mostrar()Padre para luego concatenarle mediante

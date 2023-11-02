@@ -64,6 +64,8 @@
             // 
             nUDMililitros.DecimalPlaces = 3;
             nUDMililitros.Location = new Point(360, 164);
+            nUDMililitros.Maximum = new decimal(new int[] { 3000, 0, 0, 196608 });
+            nUDMililitros.Minimum = new decimal(new int[] { 500, 0, 0, 196608 });
             nUDMililitros.Name = "nUDMililitros";
             nUDMililitros.Size = new Size(120, 23);
             nUDMililitros.TabIndex = 4;

@@ -50,5 +50,10 @@ namespace Aplicacion
                 Console.WriteLine("Error al leer el archivo de registro: " + ex.Message);
             }
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

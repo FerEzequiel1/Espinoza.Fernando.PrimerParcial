@@ -379,9 +379,21 @@ namespace Aplicacion
             }
             else
             {
-                if(producto is Gaseosa)
+                if (producto is Gaseosa)
                 {
-
+                    Gaseosa productoGaseosa = producto as Gaseosa;
+                    FrmGaseosa frmGaseosa = new FrmGaseosa(this.listaDeProductos, productoGaseosa);
+                    frmGaseosa.StartPosition = FormStartPosition.CenterScreen;
+                    frmGaseosa.ShowDialog();
+                    ActualizarLista(frmGaseosa);
+                }
+                else
+                {
+                    GaseosaPorMayor productoGaseosaPorMayor = producto as GaseosaPorMayor;
+                    FrmGaseosa frmGaseosaMayor = new FrmGaseosa(this.listaDeProductos, productoGaseosaPorMayor);
+                    frmGaseosaMayor.StartPosition = FormStartPosition.CenterScreen;
+                    frmGaseosaMayor.ShowDialog();
+                    ActualizarLista(frmGaseosaMayor);
                 }
             }
 

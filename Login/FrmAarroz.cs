@@ -24,7 +24,6 @@ namespace Aplicacion
         {
             int indiceMarca = Array.IndexOf(Enum.GetValues(typeof(EMarca)), producto.Marca);
 
-            
             this.txtNombre.Text = producto.Nombre;
             this.txtTipo.Text = producto.Tipo;
             this.cmbMarca.SelectedIndex = indiceMarca;

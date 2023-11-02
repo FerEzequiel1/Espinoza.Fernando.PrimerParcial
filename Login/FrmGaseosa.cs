@@ -16,6 +16,20 @@ namespace Aplicacion
         /// <summary>
         /// Formulario donde se va a completar los datos pedidos para poder crear un producto tipo Gaseosa
         /// </summary>
+        /// 
+        public FrmGaseosa(ListaProductos lista, Gaseosa producto) : this(lista)
+        {
+            int indiceMarca = Array.IndexOf(Enum.GetValues(typeof(EMarca)), producto.Marca);
+
+            this.txtNombre.Text = producto.Nombre;
+            this.txtTipo.Text = producto.Tipo;
+            this.cmbMarca.SelectedIndex = indiceMarca;
+            this.nUDCantidad.Value = producto.Cantidad;
+            this.nUDPrecio.Value = (decimal)producto.Precio;
+            this.nUDMililitros.Value = (decimal)producto.Mll;
+            this.txtSabor.Text = producto.Sabor;
+
+        }
         public FrmGaseosa(ListaProductos lista) : base(lista)
         {
             InitializeComponent();

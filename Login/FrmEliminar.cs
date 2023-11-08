@@ -43,7 +43,7 @@ namespace Aplicacion
         {
             int indice = this.lsBProductos.SelectedIndex;
 
-            DialogResult resultado = MessageBox.Show("¿Realmente desea eliminar el producot?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("¿Realmente desea eliminar el producto?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {

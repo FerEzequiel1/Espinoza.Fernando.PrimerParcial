@@ -14,9 +14,12 @@ namespace Aplicacion
     /// <summary>
     /// Formulario donde se va a completar los datos pedidos para poder crear un producto tipo GaseosaPorMayor
     /// </summary>
+    /// 
+    
     public partial class FrmGaseosaPorMayor : FrmAgregarProducto
     {
-        public FrmGaseosaPorMayor(ListaProductos lista, GaseosaPorMayor producto) : this(lista)
+        bool modifica = false;
+        public FrmGaseosaPorMayor(ListaProductos lista, GaseosaPorMayor producto,bool modifica) : this(lista)
         {
             int indiceMarca = Array.IndexOf(Enum.GetValues(typeof(EMarca)), producto.Marca);
 
@@ -29,6 +32,7 @@ namespace Aplicacion
             this.txtArtesanal.Text = producto.Artesanal;
             this.nUDMLL.Value = (decimal)producto.Mll;
             this.txtSabor.Text = producto.Sabor;
+            this.modifica = modifica;
 
         }
         public FrmGaseosaPorMayor(ListaProductos lista) : base(lista)
@@ -61,6 +65,10 @@ namespace Aplicacion
                     base.agregar(gaseosaPorMayor);
                     base.LimpiarCampos();
                     MessageBox.Show($"El producto ah sido ingresado con éxito", "Producto Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (modifica)
+                    {
+                        this.Close();
+                    }
                 }
             }
         }

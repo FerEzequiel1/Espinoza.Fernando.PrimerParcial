@@ -17,7 +17,8 @@ namespace Aplicacion
         /// Formulario donde se va a completar los datos pedidos para poder crear un producto tipo Gaseosa
         /// </summary>
         /// 
-        public FrmGaseosa(ListaProductos lista, Gaseosa producto) : this(lista)
+        bool modifica = false;
+        public FrmGaseosa(ListaProductos lista, Gaseosa producto, bool modifica) : this(lista)
         {
             int indiceMarca = Array.IndexOf(Enum.GetValues(typeof(EMarca)), producto.Marca);
 
@@ -28,7 +29,7 @@ namespace Aplicacion
             this.nUDPrecio.Value = (decimal)producto.Precio;
             this.nUDMililitros.Value = (decimal)producto.Mll;
             this.txtSabor.Text = producto.Sabor;
-
+            this.modifica = modifica;
         }
         public FrmGaseosa(ListaProductos lista) : base(lista)
         {
@@ -56,6 +57,10 @@ namespace Aplicacion
                     base.agregar(gaseosa);
                     base.LimpiarCampos();
                     MessageBox.Show($"El producto ah sido ingresado con éxito", "Producto Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (modifica)
+                    {
+                        this.Close();
+                    }
                 }
             }
         }

@@ -367,12 +367,10 @@ namespace Aplicacion
 
             Producto producto = this.listaDeProductos.ListaDeProductos[indice];
 
+            this.listaDeProductos.ListaDeProductos.Remove(producto);
+
             if (producto is Arroz)
             {
-                this.listaDeProductos.ListaDeProductos.Remove(producto);
-
-                //ListaProductos nl =  this.listaDeProductos;
-
                 Arroz productoArroz = producto as Arroz;
                 FrmAarroz frmAarroz = new FrmAarroz(this.listaDeProductos, productoArroz,true);
                 frmAarroz.StartPosition = FormStartPosition.CenterScreen;
@@ -385,7 +383,7 @@ namespace Aplicacion
                 if (producto is Gaseosa)
                 {
                     Gaseosa productoGaseosa = producto as Gaseosa;
-                    FrmGaseosa frmGaseosa = new FrmGaseosa(this.listaDeProductos, productoGaseosa);
+                    FrmGaseosa frmGaseosa = new FrmGaseosa(this.listaDeProductos, productoGaseosa, true);
                     frmGaseosa.StartPosition = FormStartPosition.CenterScreen;
                     frmGaseosa.ShowDialog();
                     ActualizarLista(frmGaseosa);
@@ -393,7 +391,7 @@ namespace Aplicacion
                 else
                 {
                     GaseosaPorMayor productoGaseosaPorMayor = producto as GaseosaPorMayor;
-                    FrmGaseosaPorMayor frmGaseosaMayor = new FrmGaseosaPorMayor(this.listaDeProductos, productoGaseosaPorMayor);
+                    FrmGaseosaPorMayor frmGaseosaMayor = new FrmGaseosaPorMayor(this.listaDeProductos, productoGaseosaPorMayor, true);
                     frmGaseosaMayor.StartPosition = FormStartPosition.CenterScreen;
                     frmGaseosaMayor.ShowDialog();
                     ActualizarLista(frmGaseosaMayor);

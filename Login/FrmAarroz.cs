@@ -17,8 +17,7 @@ namespace Aplicacion
         /// Formulario donde se va a completar los datos pedidos para poder crear un producto tipo Aarroz
         /// </summary>
         /// 
-        //string nombre;
-        //string tipo;
+        
         bool modifica = false;
 
         public FrmAarroz(ListaProductos lista, Arroz producto,bool modifica) : this(lista)

@@ -19,11 +19,11 @@ namespace Aplicacion
         /// 
         string nombre;
         string tipo;
+        int modifica = 0;
 
         public FrmAarroz(ListaProductos lista, Arroz producto) : this(lista)
         {
             int indiceMarca = Array.IndexOf(Enum.GetValues(typeof(EMarca)), producto.Marca);
-
             this.txtNombre.Text = producto.Nombre;
             this.txtTipo.Text = producto.Tipo;
             this.cmbMarca.SelectedIndex = indiceMarca;
@@ -52,7 +52,7 @@ namespace Aplicacion
                 //Si esta no se agrega y se informa.Caso contrario lo agrega y se recetean los campos del formulario
                 if (base.Comparar(arroz))
                 {
-                    MessageBox.Show($"El producto que intenta ingresar ya existe", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                        MessageBox.Show($"El producto que intenta ingresar ya existe", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
                 else
                 {

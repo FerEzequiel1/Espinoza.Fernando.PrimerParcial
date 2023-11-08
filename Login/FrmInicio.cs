@@ -56,8 +56,6 @@ namespace Aplicacion
             this.listaDeProductos = Producto.Deserializar(path);
             PublicarProductos();
 
-
-
         }
 
         /// <summary>
@@ -328,11 +326,11 @@ namespace Aplicacion
         /// </summary>
         private void GenerarListas()
         {
-            Arroz arroz1 = new Arroz("Arroz blanco", "Arroz", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 3, 500f, "Argentina", "Pablo");
+            Arroz arroz1 = new Arroz("Arroz blanco", "Arroz", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 3, 500f, "Brasil", "Pablo");
             Arroz arroz2 = new Arroz("Arroz Integral", "Arroz", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 5, 600f, "Argentina", "Chacra Gonzalez");
             Arroz comboArroz = arroz1 + arroz2;
 
-            Gaseosa gaseosa1 = new Gaseosa("Seven up", "Gaseosa", (EMarca)Enum.Parse(typeof(EMarca), "SevenUp"), 3, 0.500f, 3f, "Lima");
+            Gaseosa gaseosa1 = new Gaseosa("Seven up", "Gaseosa", (EMarca)Enum.Parse(typeof(EMarca), "SevenUp"), 3, 500f, 3f, "Lima");
             Gaseosa gaseosa2 = new Gaseosa("Pepsi", "Gaseosa", (EMarca)Enum.Parse(typeof(EMarca), "Pepsi"), 3, 500f, 3f, "Cola");
 
             GaseosaPorMayor gaseosaPorMayor1 = new GaseosaPorMayor("Trini", "Gaseosa Mayorista", (EMarca)Enum.Parse(typeof(EMarca), "Vienissima"), 4, 300f, 0.500f, "Uva", 1000, "Si");
@@ -371,11 +369,16 @@ namespace Aplicacion
 
             if (producto is Arroz)
             {
+                this.listaDeProductos.ListaDeProductos.Remove(producto);
+
+                //ListaProductos nl =  this.listaDeProductos;
+
                 Arroz productoArroz = producto as Arroz;
                 FrmAarroz frmAarroz = new FrmAarroz(this.listaDeProductos, productoArroz);
                 frmAarroz.StartPosition = FormStartPosition.CenterScreen;
                 frmAarroz.ShowDialog();
                 ActualizarLista(frmAarroz);
+                
             }
             else
             {
@@ -396,12 +399,6 @@ namespace Aplicacion
                     ActualizarLista(frmGaseosaMayor);
                 }
             }
-
-            //if (frmProducto.DialogResult == DialogResult.OK)
-            //{
-            //    this.listaDeProductos.ListaDeProductos[indice] = producto;
-            //    PublicarProductos();
-            //}
         }
     }
 }

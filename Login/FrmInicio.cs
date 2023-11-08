@@ -374,7 +374,7 @@ namespace Aplicacion
                 //ListaProductos nl =  this.listaDeProductos;
 
                 Arroz productoArroz = producto as Arroz;
-                FrmAarroz frmAarroz = new FrmAarroz(this.listaDeProductos, productoArroz);
+                FrmAarroz frmAarroz = new FrmAarroz(this.listaDeProductos, productoArroz,true);
                 frmAarroz.StartPosition = FormStartPosition.CenterScreen;
                 frmAarroz.ShowDialog();
                 ActualizarLista(frmAarroz);

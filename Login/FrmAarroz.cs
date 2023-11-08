@@ -19,9 +19,9 @@ namespace Aplicacion
         /// 
         string nombre;
         string tipo;
-        int modifica = 0;
+        bool modifica = false;
 
-        public FrmAarroz(ListaProductos lista, Arroz producto) : this(lista)
+        public FrmAarroz(ListaProductos lista, Arroz producto,bool modifica) : this(lista)
         {
             int indiceMarca = Array.IndexOf(Enum.GetValues(typeof(EMarca)), producto.Marca);
             this.txtNombre.Text = producto.Nombre;
@@ -31,6 +31,7 @@ namespace Aplicacion
             this.nUDPrecio.Value = (decimal)producto.Precio;
             this.txtOrigen.Text = producto.Origen;
             this.txtProveedor.Text = producto.Porveedor;
+            this.modifica = modifica;
             
         }
         public FrmAarroz(ListaProductos lista) : base(lista)
@@ -59,6 +60,10 @@ namespace Aplicacion
                     base.agregar(arroz);
                     base.LimpiarCampos();
                     MessageBox.Show($"El producto ah sido ingresado con éxito", "Producto Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (modifica)
+                    {
+                        this.Close();
+                    }
                 }
             }
         }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            btnModificar = new Button();
             btnCargar = new Button();
             btnGuardar = new Button();
             groupBox2 = new GroupBox();
@@ -50,7 +51,6 @@
             salchichaToolStripMenuItem = new ToolStripMenuItem();
             eliminarProductoToolStripMenuItem = new ToolStripMenuItem();
             historialDePersonasToolStripMenuItem = new ToolStripMenuItem();
-            btnModificar = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -71,6 +71,17 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Productos";
+            // 
+            // btnModificar
+            // 
+            btnModificar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnModificar.Location = new Point(607, 310);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(116, 59);
+            btnModificar.TabIndex = 10;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnCargar
             // 
@@ -274,17 +285,6 @@
             historialDePersonasToolStripMenuItem.Text = "Historial de personas";
             historialDePersonasToolStripMenuItem.Click += historialDePersonasToolStripMenuItem_Click;
             // 
-            // btnModificar
-            // 
-            btnModificar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnModificar.Location = new Point(607, 310);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(116, 59);
-            btnModificar.TabIndex = 10;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
-            btnModificar.Click += btnModificar_Click;
-            // 
             // FrmInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -295,6 +295,7 @@
             Controls.Add(groupBox1);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
+            MinimumSize = new Size(1190, 533);
             Name = "FrmInicio";
             Text = "Mayorista Trapal";
             FormClosing += FrmInicio_FormClosing;

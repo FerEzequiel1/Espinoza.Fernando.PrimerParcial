@@ -355,7 +355,9 @@ namespace Aplicacion
 
             Producto.Serializar(listaDeProductos, path);
         }
-
+        /// <summary>
+        /// Se realiza una modificación en el producto seleccioando y se lo reingresa a la lista.
+        /// </summary>
         private void btnModificar_Click(object sender, EventArgs e)
         {
             int indice = this.lstProductos.SelectedIndex;
@@ -364,19 +366,23 @@ namespace Aplicacion
             {
                 return;
             }
+            //Se obtiene el producto seleccioando mediante el indice obtenido del lstProductos 
 
             Producto producto = this.listaDeProductos.ListaDeProductos[indice];
 
             this.listaDeProductos.ListaDeProductos.Remove(producto);
 
+            // Se verifica que de que tipo (Aarroz,gaseosa o gaseosa por mayor) es el producto para desplegar sus formularios de modificación correspondientes
+            // y agregar el producto modificado a la lista
+
             if (producto is Arroz)
             {
                 Arroz productoArroz = producto as Arroz;
-                FrmAarroz frmAarroz = new FrmAarroz(this.listaDeProductos, productoArroz,true);
+                FrmAarroz frmAarroz = new FrmAarroz(this.listaDeProductos, productoArroz, true);
                 frmAarroz.StartPosition = FormStartPosition.CenterScreen;
                 frmAarroz.ShowDialog();
                 ActualizarLista(frmAarroz);
-                
+
             }
             else
             {

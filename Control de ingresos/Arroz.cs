@@ -17,7 +17,7 @@ namespace Control_de_ingresos
         private string origen;
         private string porveedor;
 
-       
+
         public Arroz(string nombre, string tipo, EMarca marca, int cantidad, float precio,string origen,string proveedor) : base(nombre,tipo, marca, cantidad,precio)
         {
             this.origen = origen;
@@ -37,10 +37,11 @@ namespace Control_de_ingresos
         {
             
         }
-
-
         public string Origen { get => origen; set => origen = value; }
         public string Porveedor { get => porveedor; set => porveedor = value; }
+
+
+       
 
         /// <summary>
         /// Sobrecarga del metodo Mostrar(),llama al metodo Mostrar()Padre para luego concatenarle mediante
@@ -68,7 +69,7 @@ namespace Control_de_ingresos
         /// Ajuste de precio segun si es o no de marca Gallo o su sobrecarga swift con un valor mayor
         /// </summary>
         internal override void AjustarPrecio() {
-            if (Marca == (EMarca)Enum.Parse(typeof(EMarca), "Gallo"))
+            if (Marca == (EMarca)Enum.Parse(typeof(EMarca), "SevenUp"))
             {
                 Precio = Precio * 1.3f;
             }

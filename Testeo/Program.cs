@@ -21,17 +21,29 @@ internal class Program
         GaseosaPorMayor gaseosaPorMayor2 = new GaseosaPorMayor("Don Antonio", "Gaseosa Mayorista", (EMarca)Enum.Parse(typeof(EMarca), "Swift"), 4, 150f,500f,"Naranja",500,"No");
         GaseosaPorMayor gaseosaPorMayor3 = gaseosaPorMayor1 + gaseosaPorMayor2;
 
+        Milanesas milanga = new Milanesas("Fernando","Milanesas", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"),20,300f,"Vacuno","Brasil");
+        Milanesas milanga2 = new Milanesas("Franco", "Milanesas", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 20, 300f, "Bovino", "Argentino");
+
+        Milanesas bandeja = milanga + milanga2;
+
         List<Producto> productos   = new List<Producto>();
 
-        productos.Add(arroz1);
-        productos.Add(arroz2);
-        productos.Add(comboArroz);
-        productos.Add(gaseosa1);
-        productos.Add(gaseosa2);
-        productos.Add(gaseosaPorMayor1);
-        productos.Add(gaseosaPorMayor2);
-        productos.Add(gaseosaPorMayor3);
+        //productos.Add(arroz1);
+        //productos.Add(arroz2);
+        //productos.Add(comboArroz);
+        //productos.Add(gaseosa1);
+        //productos.Add(gaseosa2);
+        //productos.Add(gaseosaPorMayor1);
+        //productos.Add(gaseosaPorMayor2);
+        //productos.Add(gaseosaPorMayor3);
+        //productos.Add(milanga);
+        //productos.Add(milanga2);
+        productos.Add(milanga);
 
+        foreach (var item in productos)
+        {
+            Console.WriteLine(item.ToString());
+        }
         ListaProductos listaDeProductos = new(productos);
 
         string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -39,13 +51,6 @@ internal class Program
 
         Producto.Serializar(listaDeProductos, path);
         //listaDeProductos = Producto.Deserializar(path);
-
-        
-
-
-
-
-
     }
 
 

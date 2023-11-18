@@ -111,6 +111,7 @@
             // 
             nUDMLL.DecimalPlaces = 3;
             nUDMLL.Location = new Point(14, 245);
+            nUDMLL.Maximum = new decimal(new int[] { 3000, 0, 0, 196608 });
             nUDMLL.Minimum = new decimal(new int[] { 500, 0, 0, 196608 });
             nUDMLL.Name = "nUDMLL";
             nUDMLL.Size = new Size(120, 23);

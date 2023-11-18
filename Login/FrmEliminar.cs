@@ -43,13 +43,19 @@ namespace Aplicacion
         {
             int indice = this.lsBProductos.SelectedIndex;
 
-            if (indice >= 0)
-            {
-                Producto producto = this.lista.ListaDeProductos[indice];
+            DialogResult resultado = MessageBox.Show("¿Realmente desea eliminar el producto?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                Eliminar(producto);
-                PublicarProductos();
+            if (resultado == DialogResult.Yes)
+            {
+                if (indice >= 0)
+                {
+                    Producto producto = this.lista.ListaDeProductos[indice];
+
+                    Eliminar(producto);
+                    PublicarProductos();
+                }
             }
+
 
         }
 

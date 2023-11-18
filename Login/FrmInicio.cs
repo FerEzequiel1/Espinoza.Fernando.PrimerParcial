@@ -42,7 +42,7 @@ namespace Aplicacion
         /// Se llama al método PublicarProductos() para mostrar los productos en un Text Box.
         /// 
         /// </summary>
-        
+
         private void FrmInicio_Load(object sender, EventArgs e)
         {
             GenerarListas();
@@ -56,8 +56,6 @@ namespace Aplicacion
             this.listaDeProductos = Producto.Deserializar(path);
             PublicarProductos();
 
-
-
         }
 
         /// <summary>
@@ -65,7 +63,7 @@ namespace Aplicacion
         /// podra añadir un producto a la lista.
         /// Se abrira un formulario distinto dependiendo de su elección
         /// </summary>
-       
+
         private void gaseosaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CrearFormulario("Gaseosa");
@@ -78,13 +76,17 @@ namespace Aplicacion
         {
             CrearFormulario("Gaseosa por mayor");
         }
+        private void milanesasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrearFormulario("Milanesas");
+        }
 
         /// <summary>
         /// Se abre la interfaz para eliminar un producto a seleccionar en la lista,
         /// una vez terminado se reasigna la lista recortada al atributo listaDeProductos del 
         /// formulario principal para mostras en la intefaz de inicio
         /// </summary>
-       
+
         private void eliminarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmEliminar frmEliminar = new FrmEliminar(this.listaDeProductos);
@@ -144,7 +146,7 @@ namespace Aplicacion
         /// en la lista al atributo listaDeProductos del formulario de inicio
         /// 
         /// </summary>
-        
+
         public void CrearFormulario(string tipo)
         {
             switch (tipo)
@@ -172,9 +174,15 @@ namespace Aplicacion
                     gaseosaPorMayor.ShowDialog();
                     ActualizarLista(gaseosaPorMayor);
                     break;
+
+                case "Milanesas":
+
+                    FrmMilanesas milanesa = new FrmMilanesas(this.listaDeProductos);
+                    milanesa.StartPosition = FormStartPosition.CenterScreen;
+                    milanesa.ShowDialog();
+                    ActualizarLista(milanesa);
+                    break;
             }
-
-
         }
         /// <summary>
         /// se asigna los cambios que se hicieron en la lista de los formularios 
@@ -234,7 +242,7 @@ namespace Aplicacion
         /// Crea el formulario donde se va a leer el archivo de historial de gente logeada para mostrarlo en un list box
         /// Se crea el path donde esta la ruta del archivo a leer y se lo pasa por parametro al FrmHistorial para su uso
         /// </summary>
-       
+
         private void historialDePersonasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -328,16 +336,21 @@ namespace Aplicacion
         /// </summary>
         private void GenerarListas()
         {
-            Arroz arroz1 = new Arroz("Arroz blanco", "Arroz", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 3, 500f, "Argentina", "Pablo");
+            Arroz arroz1 = new Arroz("Arroz blanco", "Arroz", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 3, 500f, "Brasil", "Pablo");
             Arroz arroz2 = new Arroz("Arroz Integral", "Arroz", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 5, 600f, "Argentina", "Chacra Gonzalez");
             Arroz comboArroz = arroz1 + arroz2;
+
 
             Gaseosa gaseosa1 = new Gaseosa("Seven up", "Gaseosa", (EMarca)Enum.Parse(typeof(EMarca), "SevenUp"), 3, 500f, 3f, "Lima");
             Gaseosa gaseosa2 = new Gaseosa("Pepsi", "Gaseosa", (EMarca)Enum.Parse(typeof(EMarca), "Pepsi"), 3, 500f, 3f, "Cola");
 
-            GaseosaPorMayor gaseosaPorMayor1 = new GaseosaPorMayor("Trini", "Gaseosa Mayorista", (EMarca)Enum.Parse(typeof(EMarca), "Vienissima"), 4, 300f, 500f, "Uva", 1000, "Si");
-            GaseosaPorMayor gaseosaPorMayor2 = new GaseosaPorMayor("Don Antonio", "Gaseosa Mayorista", (EMarca)Enum.Parse(typeof(EMarca), "Swift"), 4, 150f, 500f, "Naranja", 500, "No");
+            GaseosaPorMayor gaseosaPorMayor1 = new GaseosaPorMayor("Trini", "Gaseosa Mayorista", (EMarca)Enum.Parse(typeof(EMarca), "Vienissima"), 4, 300f, 0.500f, "Uva", 1000, "Si");
+            GaseosaPorMayor gaseosaPorMayor2 = new GaseosaPorMayor("Don Antonio", "Gaseosa Mayorista", (EMarca)Enum.Parse(typeof(EMarca), "Swift"), 4, 150f, 0.500f, "Naranja", 500, "No");
             GaseosaPorMayor gaseosaPorMayor3 = gaseosaPorMayor1 + gaseosaPorMayor2;
+
+            Milanesas milanesa1 = new Milanesas("Fernando", "Milanesas", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 20, 300f, "Vacuno", "Brasil");
+            Milanesas milanesa2 = new Milanesas("Franco", "Milanesas", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 20, 300f, "Bovino", "Argentino");
+            Milanesas bandeja = milanesa1 + milanesa2;
 
             List<Producto> productos = new List<Producto>();
 
@@ -349,13 +362,79 @@ namespace Aplicacion
             productos.Add(gaseosaPorMayor1);
             productos.Add(gaseosaPorMayor2);
             productos.Add(gaseosaPorMayor3);
+            productos.Add(milanesa1);
+            productos.Add(milanesa2);
+            productos.Add(bandeja);
 
             ListaProductos listaDeProductos = new(productos);
-
 
             string path = Path();
 
             Producto.Serializar(listaDeProductos, path);
         }
+        /// <summary>
+        /// Se realiza una modificación en el producto seleccioando y se lo reingresa a la lista.
+        /// </summary>
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int indice = this.lstProductos.SelectedIndex;
+
+            if (indice == -1)
+            {
+                return;
+            }
+            //Se obtiene el producto seleccioando mediante el indice obtenido del lstProductos 
+
+            Producto producto = this.listaDeProductos.ListaDeProductos[indice];
+
+            this.listaDeProductos.ListaDeProductos.Remove(producto);
+
+            // Se verifica que de que tipo (Aarroz,gaseosa o gaseosa por mayor) es el producto para desplegar sus formularios de modificación correspondientes
+            // y agregar el producto modificado a la lista
+
+            if (producto is Arroz)
+            {
+                Arroz productoArroz = producto as Arroz;
+                FrmAarroz frmAarroz = new FrmAarroz(this.listaDeProductos, productoArroz, true);
+                frmAarroz.StartPosition = FormStartPosition.CenterScreen;
+                frmAarroz.ShowDialog();
+                ActualizarLista(frmAarroz);
+
+            }
+            else
+            {
+                if (producto is Gaseosa)
+                {
+                    Gaseosa productoGaseosa = producto as Gaseosa;
+                    FrmGaseosa frmGaseosa = new FrmGaseosa(this.listaDeProductos, productoGaseosa, true);
+                    frmGaseosa.StartPosition = FormStartPosition.CenterScreen;
+                    frmGaseosa.ShowDialog();
+                    ActualizarLista(frmGaseosa);
+                }
+                else
+                {
+                    if(producto is GaseosaPorMayor)
+                    {
+                        GaseosaPorMayor productoGaseosaPorMayor = producto as GaseosaPorMayor;
+                        FrmGaseosaPorMayor frmGaseosaMayor = new FrmGaseosaPorMayor(this.listaDeProductos, productoGaseosaPorMayor, true);
+                        frmGaseosaMayor.StartPosition = FormStartPosition.CenterScreen;
+                        frmGaseosaMayor.ShowDialog();
+                        ActualizarLista(frmGaseosaMayor);
+                    }
+                    else
+                    {
+                        Milanesas milanesa = producto as Milanesas;
+                        FrmMilanesas frmMilanesa = new FrmMilanesas(this.listaDeProductos, milanesa, true);
+                        frmMilanesa.StartPosition = FormStartPosition.CenterScreen;
+                        frmMilanesa.ShowDialog();
+                        ActualizarLista(frmMilanesa);
+                    }
+
+                
+                }
+            }
+        }
+
+      
     }
 }

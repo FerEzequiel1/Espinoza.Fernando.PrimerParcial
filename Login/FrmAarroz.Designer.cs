@@ -108,7 +108,7 @@
 
         private TextBox txtOrigen;
         private TextBox txtProveedor;
-        private Label label7;
-        private Label label6;
+        internal Label label7;
+        internal Label label6;
     }
 }

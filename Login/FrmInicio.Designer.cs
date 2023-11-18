@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            btnModificar = new Button();
             btnCargar = new Button();
             btnGuardar = new Button();
             groupBox2 = new GroupBox();
@@ -50,6 +51,7 @@
             salchichaToolStripMenuItem = new ToolStripMenuItem();
             eliminarProductoToolStripMenuItem = new ToolStripMenuItem();
             historialDePersonasToolStripMenuItem = new ToolStripMenuItem();
+            milanesasToolStripMenuItem = new ToolStripMenuItem();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -59,6 +61,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnModificar);
             groupBox1.Controls.Add(btnCargar);
             groupBox1.Controls.Add(btnGuardar);
             groupBox1.Controls.Add(groupBox2);
@@ -69,6 +72,17 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Productos";
+            // 
+            // btnModificar
+            // 
+            btnModificar.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnModificar.Location = new Point(607, 310);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(116, 59);
+            btnModificar.TabIndex = 10;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnCargar
             // 
@@ -232,7 +246,7 @@
             // 
             // ingresarProductoToolStripMenuItem
             // 
-            ingresarProductoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gaseosaToolStripMenuItem, arrozToolStripMenuItem, salchichaToolStripMenuItem });
+            ingresarProductoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gaseosaToolStripMenuItem, arrozToolStripMenuItem, salchichaToolStripMenuItem, milanesasToolStripMenuItem });
             ingresarProductoToolStripMenuItem.Name = "ingresarProductoToolStripMenuItem";
             ingresarProductoToolStripMenuItem.Size = new Size(226, 26);
             ingresarProductoToolStripMenuItem.Text = "Ingresar producto";
@@ -272,6 +286,13 @@
             historialDePersonasToolStripMenuItem.Text = "Historial de personas";
             historialDePersonasToolStripMenuItem.Click += historialDePersonasToolStripMenuItem_Click;
             // 
+            // milanesasToolStripMenuItem
+            // 
+            milanesasToolStripMenuItem.Name = "milanesasToolStripMenuItem";
+            milanesasToolStripMenuItem.Size = new Size(222, 26);
+            milanesasToolStripMenuItem.Text = "Milanesas";
+            milanesasToolStripMenuItem.Click += milanesasToolStripMenuItem_Click;
+            // 
             // FrmInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -282,6 +303,7 @@
             Controls.Add(groupBox1);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
+            MinimumSize = new Size(1190, 533);
             Name = "FrmInicio";
             Text = "Mayorista Trapal";
             FormClosing += FrmInicio_FormClosing;
@@ -322,5 +344,7 @@
         private Button btnOrdenar;
         private Button btnGuardar;
         private Button btnCargar;
+        private Button btnModificar;
+        private ToolStripMenuItem milanesasToolStripMenuItem;
     }
 }

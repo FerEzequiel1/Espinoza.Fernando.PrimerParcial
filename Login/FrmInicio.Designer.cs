@@ -51,6 +51,7 @@
             salchichaToolStripMenuItem = new ToolStripMenuItem();
             eliminarProductoToolStripMenuItem = new ToolStripMenuItem();
             historialDePersonasToolStripMenuItem = new ToolStripMenuItem();
+            milanesasToolStripMenuItem = new ToolStripMenuItem();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -245,7 +246,7 @@
             // 
             // ingresarProductoToolStripMenuItem
             // 
-            ingresarProductoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gaseosaToolStripMenuItem, arrozToolStripMenuItem, salchichaToolStripMenuItem });
+            ingresarProductoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gaseosaToolStripMenuItem, arrozToolStripMenuItem, salchichaToolStripMenuItem, milanesasToolStripMenuItem });
             ingresarProductoToolStripMenuItem.Name = "ingresarProductoToolStripMenuItem";
             ingresarProductoToolStripMenuItem.Size = new Size(226, 26);
             ingresarProductoToolStripMenuItem.Text = "Ingresar producto";
@@ -284,6 +285,13 @@
             historialDePersonasToolStripMenuItem.Size = new Size(226, 26);
             historialDePersonasToolStripMenuItem.Text = "Historial de personas";
             historialDePersonasToolStripMenuItem.Click += historialDePersonasToolStripMenuItem_Click;
+            // 
+            // milanesasToolStripMenuItem
+            // 
+            milanesasToolStripMenuItem.Name = "milanesasToolStripMenuItem";
+            milanesasToolStripMenuItem.Size = new Size(222, 26);
+            milanesasToolStripMenuItem.Text = "Milanesas";
+            milanesasToolStripMenuItem.Click += milanesasToolStripMenuItem_Click;
             // 
             // FrmInicio
             // 
@@ -337,5 +345,6 @@
         private Button btnGuardar;
         private Button btnCargar;
         private Button btnModificar;
+        private ToolStripMenuItem milanesasToolStripMenuItem;
     }
 }

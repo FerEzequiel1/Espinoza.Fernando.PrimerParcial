@@ -1,6 +1,6 @@
 ﻿namespace Aplicacion
 {
-    partial class FrmAarroz
+    partial class FrmMilanesas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtOrigen = new TextBox();
-            txtProveedor = new TextBox();
             label6 = new Label();
             label7 = new Label();
+            txtOrigenAnimal = new TextBox();
+            txtNacionalidad = new TextBox();
             gpArmado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nUDCantidad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nUDPrecio).BeginInit();
@@ -43,60 +43,60 @@
             // 
             // gpArmado
             // 
-            gpArmado.Controls.Add(label7);
+            gpArmado.Controls.Add(txtNacionalidad);
+            gpArmado.Controls.Add(txtOrigenAnimal);
             gpArmado.Controls.Add(label6);
-            gpArmado.Controls.Add(txtOrigen);
-            gpArmado.Controls.Add(txtProveedor);
+            gpArmado.Controls.Add(label7);
             gpArmado.Controls.SetChildIndex(txtNombre, 0);
             gpArmado.Controls.SetChildIndex(txtTipo, 0);
             gpArmado.Controls.SetChildIndex(nUDCantidad, 0);
             gpArmado.Controls.SetChildIndex(cmbMarca, 0);
             gpArmado.Controls.SetChildIndex(nUDPrecio, 0);
             gpArmado.Controls.SetChildIndex(btnAgregar, 0);
-            gpArmado.Controls.SetChildIndex(txtProveedor, 0);
-            gpArmado.Controls.SetChildIndex(txtOrigen, 0);
-            gpArmado.Controls.SetChildIndex(label6, 0);
             gpArmado.Controls.SetChildIndex(label7, 0);
-            // 
-            // txtOrigen
-            // 
-            txtOrigen.Location = new Point(376, 164);
-            txtOrigen.Name = "txtOrigen";
-            txtOrigen.Size = new Size(100, 23);
-            txtOrigen.TabIndex = 4;
-            // 
-            // txtProveedor
-            // 
-            txtProveedor.Location = new Point(565, 164);
-            txtProveedor.Name = "txtProveedor";
-            txtProveedor.Size = new Size(100, 23);
-            txtProveedor.TabIndex = 5;
+            gpArmado.Controls.SetChildIndex(label6, 0);
+            gpArmado.Controls.SetChildIndex(txtOrigenAnimal, 0);
+            gpArmado.Controls.SetChildIndex(txtNacionalidad, 0);
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(376, 145);
+            label6.Location = new Point(341, 146);
             label6.Name = "label6";
-            label6.Size = new Size(43, 15);
-            label6.TabIndex = 15;
-            label6.Text = "Origen";
+            label6.Size = new Size(82, 15);
+            label6.TabIndex = 4;
+            label6.Text = "Origen animal";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(565, 145);
+            label7.Location = new Point(565, 146);
             label7.Name = "label7";
-            label7.Size = new Size(61, 15);
-            label7.TabIndex = 16;
-            label7.Text = "Proveedor";
+            label7.Size = new Size(77, 15);
+            label7.TabIndex = 5;
+            label7.Text = "Nacionalidad";
             // 
-            // FrmAarroz
+            // txtOrigenAnimal
+            // 
+            txtOrigenAnimal.Location = new Point(341, 164);
+            txtOrigenAnimal.Name = "txtOrigenAnimal";
+            txtOrigenAnimal.Size = new Size(153, 23);
+            txtOrigenAnimal.TabIndex = 15;
+            // 
+            // txtNacionalidad
+            // 
+            txtNacionalidad.Location = new Point(565, 164);
+            txtNacionalidad.Name = "txtNacionalidad";
+            txtNacionalidad.Size = new Size(124, 23);
+            txtNacionalidad.TabIndex = 16;
+            // 
+            // FrmMilanesas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(975, 494);
-            Name = "FrmAarroz";
-            Text = "Ingreso de Aarroz";
+            Name = "FrmMilanesas";
+            Text = "FrmMilanesas";
             gpArmado.ResumeLayout(false);
             gpArmado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nUDCantidad).EndInit();
@@ -106,9 +106,9 @@
 
         #endregion
 
-        private TextBox txtOrigen;
-        private TextBox txtProveedor;
-        internal Label label7;
-        internal Label label6;
+        private Label label6;
+        private Label label7;
+        private TextBox txtNacionalidad;
+        private TextBox txtOrigenAnimal;
     }
 }

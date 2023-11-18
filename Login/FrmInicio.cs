@@ -76,6 +76,10 @@ namespace Aplicacion
         {
             CrearFormulario("Gaseosa por mayor");
         }
+        private void milanesasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrearFormulario("Milanesas");
+        }
 
         /// <summary>
         /// Se abre la interfaz para eliminar un producto a seleccionar en la lista,
@@ -170,9 +174,15 @@ namespace Aplicacion
                     gaseosaPorMayor.ShowDialog();
                     ActualizarLista(gaseosaPorMayor);
                     break;
+
+                case "Milanesas":
+
+                    FrmMilanesas milanesa = new FrmMilanesas(this.listaDeProductos);
+                    milanesa.StartPosition = FormStartPosition.CenterScreen;
+                    milanesa.ShowDialog();
+                    ActualizarLista(milanesa);
+                    break;
             }
-
-
         }
         /// <summary>
         /// se asigna los cambios que se hicieron en la lista de los formularios 
@@ -330,12 +340,17 @@ namespace Aplicacion
             Arroz arroz2 = new Arroz("Arroz Integral", "Arroz", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 5, 600f, "Argentina", "Chacra Gonzalez");
             Arroz comboArroz = arroz1 + arroz2;
 
+
             Gaseosa gaseosa1 = new Gaseosa("Seven up", "Gaseosa", (EMarca)Enum.Parse(typeof(EMarca), "SevenUp"), 3, 500f, 3f, "Lima");
             Gaseosa gaseosa2 = new Gaseosa("Pepsi", "Gaseosa", (EMarca)Enum.Parse(typeof(EMarca), "Pepsi"), 3, 500f, 3f, "Cola");
 
             GaseosaPorMayor gaseosaPorMayor1 = new GaseosaPorMayor("Trini", "Gaseosa Mayorista", (EMarca)Enum.Parse(typeof(EMarca), "Vienissima"), 4, 300f, 0.500f, "Uva", 1000, "Si");
             GaseosaPorMayor gaseosaPorMayor2 = new GaseosaPorMayor("Don Antonio", "Gaseosa Mayorista", (EMarca)Enum.Parse(typeof(EMarca), "Swift"), 4, 150f, 0.500f, "Naranja", 500, "No");
             GaseosaPorMayor gaseosaPorMayor3 = gaseosaPorMayor1 + gaseosaPorMayor2;
+
+            Milanesas milanesa1 = new Milanesas("Fernando", "Milanesas", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 20, 300f, "Vacuno", "Brasil");
+            Milanesas milanesa2 = new Milanesas("Franco", "Milanesas", (EMarca)Enum.Parse(typeof(EMarca), "Gallo"), 20, 300f, "Bovino", "Argentino");
+            Milanesas bandeja = milanesa1 + milanesa2;
 
             List<Producto> productos = new List<Producto>();
 
@@ -347,9 +362,11 @@ namespace Aplicacion
             productos.Add(gaseosaPorMayor1);
             productos.Add(gaseosaPorMayor2);
             productos.Add(gaseosaPorMayor3);
+            productos.Add(milanesa1);
+            productos.Add(milanesa2);
+            productos.Add(bandeja);
 
             ListaProductos listaDeProductos = new(productos);
-
 
             string path = Path();
 
@@ -396,13 +413,28 @@ namespace Aplicacion
                 }
                 else
                 {
-                    GaseosaPorMayor productoGaseosaPorMayor = producto as GaseosaPorMayor;
-                    FrmGaseosaPorMayor frmGaseosaMayor = new FrmGaseosaPorMayor(this.listaDeProductos, productoGaseosaPorMayor, true);
-                    frmGaseosaMayor.StartPosition = FormStartPosition.CenterScreen;
-                    frmGaseosaMayor.ShowDialog();
-                    ActualizarLista(frmGaseosaMayor);
+                    if(producto is GaseosaPorMayor)
+                    {
+                        GaseosaPorMayor productoGaseosaPorMayor = producto as GaseosaPorMayor;
+                        FrmGaseosaPorMayor frmGaseosaMayor = new FrmGaseosaPorMayor(this.listaDeProductos, productoGaseosaPorMayor, true);
+                        frmGaseosaMayor.StartPosition = FormStartPosition.CenterScreen;
+                        frmGaseosaMayor.ShowDialog();
+                        ActualizarLista(frmGaseosaMayor);
+                    }
+                    else
+                    {
+                        Milanesas milanesa = producto as Milanesas;
+                        FrmMilanesas frmMilanesa = new FrmMilanesas(this.listaDeProductos, milanesa, true);
+                        frmMilanesa.StartPosition = FormStartPosition.CenterScreen;
+                        frmMilanesa.ShowDialog();
+                        ActualizarLista(frmMilanesa);
+                    }
+
+                
                 }
             }
         }
+
+      
     }
 }

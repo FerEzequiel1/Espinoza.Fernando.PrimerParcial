@@ -11,8 +11,9 @@ namespace Control_de_ingresos
     [XmlInclude(typeof(Gaseosa))]
     [XmlInclude(typeof(Arroz))]
     [XmlInclude(typeof(GaseosaPorMayor))]
+    [XmlInclude(typeof(Milanesas))]
 
-    
+
     public abstract class Producto
     {
         /// <summary>
